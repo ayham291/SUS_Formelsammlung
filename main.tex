@@ -1,0 +1,23 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{preamble}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle\newpage
+
+\tableofcontents
+
+\twocolumn\cleardoublepage
+\pagestyle{fancy}
+\lhead{Signale und Systeme\\ Formelsammlung}
+\rhead{WS 21/22 \\Ayham Alhalaibi}
+\cfoot{\vspace{-20pt}\thepage}
+\pagenumbering{arabic}
+
+\input{Signale_im_Zeitbreich}
+\input{Systeme}\newpage
+% \input{Zweipole}
+\include{Zweipole}
+
+\end{document}
