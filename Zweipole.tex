@@ -109,26 +109,8 @@
 \end{mdframed}
 
 \subsubsection{Parameterumrechnung}
-% \begin{table}[htbp]
-%     \begin{tabular}{c|c|c|c|c|c}
-%         $Z$ & $Y$ & $H$ & $A$ & $C$\\
-%         \hline
-%         $
-%         \begin{bmatrix}
-%             \underline{Z_11} & \underline{Z_12}\\
-%             \underline{Z_21} & \underline{Z_22}
-%         \end{bmatrix}
-%         $
-%         &$
-%             \begin{bmatrix}
-%                 \dfrac{\underline{{Y}_{22}}}{\operatorname{det}\underline{\boldsymbol{Y}}} & \dfrac{-\underline{Y}_{12}}{\operatorname{det} \underline{\boldsymbol{Y}}}\\
-%                 \dfrac{-\underline{Y}_{21}}{\operatorname{det} \underline{\boldsymbol{Y}}} & \dfrac{\underline{{Y}}_{11}}{\operatorname{det} \underline{\boldsymbol{Y}}} \\
-%             \end{bmatrix}
-%         $  & a & n\\
-%     \end{tabular}
-% \end{table}
-\includegraphics[width=\columnwidth,height=9cm]{Parameterumrechnung}\\
-% \newpage0\newpage \onecolumn
+\input{parameterumrechnung}
+% \includegraphics[width=\columnwidth,height=9cm]{Parameterumrechnung}\\
 
 \subsection{Zusammenschalten von Zweitoren}
 
@@ -187,4 +169,132 @@
 \end{samepage}
 \twocolumn
 
-\subsection{Torbedingungen}
+\subsubsection{Trennverst\"arker}
+\begin{mdframed}[style=exercise]
+Ersatzschaltbild eines idealen Trennverst\"arkers:
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{Trennverstaerker_esb}
+    \end{center}
+    \[
+        A = \begin{pmatrix}
+            \dfrac{1}{v_U} & 0 \\
+                  0        & 0
+        \end{pmatrix}
+    \]
+    \[
+        \underline{A}_e = \begin{pmatrix}
+            \underline{A}_{11} & \underline{A}_{12}\\
+            \underline{A}_{21} & \underline{A}_{22}
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            \dfrac{1}{v_U} & 0 \\
+                  0        & 0
+        \end{pmatrix}
+        = \begin{pmatrix}
+            \dfrac{\underline{A}_{11}}{v_U} & 0\\
+            \dfrac{\underline{A}_{21}}{v_U} & 0
+        \end{pmatrix}
+    \]
+\end{mdframed}
+
+\subsubsection{Torbedingungen}
+Die Torbedingungen werden durch:
+    \begin{itemize}
+        \item idealen \"Ubertrager
+        \item Kurzschlussschleife
+        \item Parallelschaltung längssymmetrischer Zweitore
+    \end{itemize} erf\"ullt.
+
+
+für die das Zusammenschalten von Zweitoren müssen diese Bedingungen
+eingehalten werden.
+
+\subsection{Zweitor Eigenschaften:}
+\begin{itemize}
+        % \setlength{\itemindent}{-1em}
+    \item Reziprozit\"at (Umkehrbarkeit)
+        \begin{center}
+            \begin{tabular}{|c|c|}
+                \hline
+                $Z$&  $Z_{12} = Z_{21}$\\
+                \hline
+                $Y$&  $Y_{12} = Y_{21}$\\
+                \hline
+                $A$&  $\operatorname{det}[A] = 1$\\
+                \hline
+                $H$&  $H_{12} = -H_{21}$\\
+                \hline
+            \end{tabular}
+        \end{center}
+        Ein umkehrbares (reziprokes) Zweitor wird\\ nur durch drei Parameter
+        beschrieben:
+
+        \footnotesize
+        \textbf{(RLCM-Zweitor)ist immer umkehrbar.}
+
+        {\color{red}{Gegenbeispiel:}} idealer Transistor
+        \normalsize
+    \item R\"uckwirkungsfreiheit\\
+        $$Z_{12}=Y_{12}=H_{12}=\operatorname{det}[A]=0$$
+        Ein rückwirkungsfreies Zweitor ist nicht reziprok und wird nur durch
+        drei Parameter beschrieben.\\
+        \footnotesize
+        Beispiele: idealer Verstärker, idealer Transistor, gesteuerte Quellen
+        \normalsize
+    \item Symmetrie
+        \begin{center}
+            \begin{tabular}{|c|c|}
+                \hline
+                $Z$&  $Z_{11} = Z_{22}$\\
+                \hline
+                $Y$&  $Y_{11} = Y_{22}$\\
+                \hline
+                $A$&  $A_{11} = A_{22}$\\
+                \hline
+                $H$&  $\operatorname{det}[H]=1$\\
+                \hline
+            \end{tabular}
+        \end{center}
+        Ein umkehrbares und symmetrisches Zweitor wird durch zwei Parameter
+        beschrieben.
+\end{itemize}
+\newpage
+
+\subsection{Zweitorersatzschaltung}
+\subsubsection{gesteuerte Quellen}
+\begin{mdframed}[style=exercise,frametitle=Ideal]
+    \begin{center}
+        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}
+    \begin{tabular}{l c}
+        Spannungsgesteurte Spannungsquelle:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
+        Stromgesteurte Spannungsquelle:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
+    \end{tabular}
+    \end{center}
+    \begin{center}
+        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}
+    \begin{tabular}{l c}
+        Spannungsgesteurte Spannungsquelle:& $\underline{I}=\beta\cdot \underline{I}_1$\\
+        Stromgesteurte Spannungsquelle:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
+    \end{tabular}
+    \end{center}
+    Andere Matrizen sind nicht definiert.  Ideale (gesteuerte) Quellen lassen
+    sich nicht ineinander umwandeln!
+\end{mdframed}
+
+\begin{mdframed}[style=exercise,frametitle=Linear]
+    \begin{center}
+        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}
+    \begin{tabular}{l c}
+        Spannungsgesteurte Spannungsquelle:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
+        Stromgesteurte Spannungsquelle:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
+    \end{tabular}
+    \end{center}
+    \begin{center}
+        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}
+    \begin{tabular}{l c}
+        Spannungsgesteurte Spannungsquelle:& $\underline{I}=\beta\cdot \underline{I}_1$\\
+        Stromgesteurte Spannungsquelle:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
+    \end{tabular}
+    \end{center}
+\end{mdframed}
