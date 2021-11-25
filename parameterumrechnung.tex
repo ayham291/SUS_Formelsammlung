@@ -1,0 +1,82 @@
+\begingroup
+\arraycolsep=1.0pt\def\arraystretch{2.0}
+\begin{align*}
+    Z && \hspace{0.5cm} Y && \hspace{0.5cm} H && \hspace{0.5cm} A
+\end{align*}
+\[
+    Z\
+    \begin{bmatrix}
+        \underline{Z}_{11} & \underline{Z}_{12}\\
+        \underline{Z}_{21} & \underline{Z}_{22}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{\underline{Y}_{22}}{\operatorname{det}\underline{\boldsymbol{Y}}} & \dfrac{-\underline{Y}_{12}}{\operatorname{det} \underline{\boldsymbol{Y}}}\\
+        \dfrac{-\underline{Y}_{21}}{\operatorname{det} \underline{\boldsymbol{Y}}} & \dfrac{\underline{{Y}}_{11}}{\operatorname{det} \underline{\boldsymbol{Y}}} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{\operatorname{det}\underline{\boldsymbol{{H}}}}{\underline{H}_{22}} & \dfrac{\underline{H}_{12}}{\underline{H}_{22}} \\
+        \dfrac{-\underline{H}_{21}}{\underline{H}_{22}} & \dfrac{1}{\underline{H}_{22}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{\underline{A}_{11}}{\underline{A}_{21}} & \dfrac{\operatorname{det}\underline{\boldsymbol{A}}}{\underline{A}_{21}}\\
+        \dfrac{1}{\underline{A}_{21}} & \dfrac{\underline{{A}}_{22}}{\underline{A}_{21}} \\
+    \end{bmatrix}
+\]
+\[
+    Y\
+    \begin{bmatrix}
+        \dfrac{\underline{Z}_{22}}{\operatorname{det}\underline{\boldsymbol{Z}}} & \dfrac{-\underline{Z}_{12}}{\operatorname{det} \underline{\boldsymbol{Z}}}\\
+        \dfrac{-\underline{Z}_{21}}{\operatorname{det} \underline{\boldsymbol{Z}}} & \dfrac{\underline{{Z}}_{11}}{\operatorname{det} \underline{\boldsymbol{Z}}} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \underline{Y}_{11} & \underline{Y}_{12}\\
+        \underline{Y}_{21} & \underline{Y}_{22}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{1}{\underline{H}_{11}} & \dfrac{-\underline{H}_{12}}{\underline{H}_{11}} \\
+        \dfrac{\underline{H}_{21}}{\underline{H}_{11}} & \dfrac{\operatorname{det}\underline{\boldsymbol{{H}}}}{\underline{H}_{11}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{\underline{A}_{22}}{\underline{A}_{12}} & \dfrac{-\operatorname{det}\underline{\boldsymbol{A}}}{\underline{A}_{12}}\\
+        \dfrac{-1}{\underline{A}_{12}} & \dfrac{\underline{{A}}_{11}}{\underline{A}_{12}} \\
+    \end{bmatrix}
+\]
+\[
+    H\
+    \begin{bmatrix}
+        \dfrac{\operatorname{det}\underline{\boldsymbol{{Z}}}}{\underline{Z}_{22}} & \dfrac{\underline{Z}_{12}}{\underline{Z}_{22}} \\
+        \dfrac{-\underline{Z}_{21}}{\underline{Z}_{22}} & \dfrac{1}{\underline{Z}_{22}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{1}{\underline{Y}_{11}} & \dfrac{-\underline{Y}_{12}}{\underline{Y}_{11}} \\
+        \dfrac{\underline{Y}_{21}}{\underline{Y}_{11}} & \dfrac{\operatorname{det}\underline{\boldsymbol{{Y}}}}{\underline{Y}_{11}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \underline{H}_{11} & \underline{H}_{12}\\
+        \underline{H}_{21} & \underline{H}_{22}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{\underline{A}_{12}}{\underline{A}_{22}} & \dfrac{\operatorname{det}\underline{\boldsymbol{A}}}{\underline{A}_{22}}\\
+        \dfrac{-1}{\underline{A}_{22}} & \dfrac{\underline{{A}}_{21}}{\underline{A}_{22}} \\
+    \end{bmatrix}
+\]
+\[
+    A\
+    \begin{bmatrix}
+        \dfrac{\underline{Z}_{11}}{\underline{Z}_{21}} & \dfrac{\operatorname{det}\underline{\boldsymbol{Z}}}{\underline{Z}_{21}}\\
+        \dfrac{1}{\underline{Z}_{21}} & \dfrac{\underline{{Z}}_{22}}{\underline{Z}_{21}} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{-\underline{Y}_{22}}{\underline{Y}_{21}} & \dfrac{-1}{\underline{Y}_{21}}\\
+        \dfrac{-\operatorname{det}\underline{\boldsymbol{Y}}}{\underline{Y}_{21}} & \dfrac{-\underline{{Y}}_{11}}{\underline{Y}_{21}} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \dfrac{-\operatorname{det}\underline{\boldsymbol{{H}}}}{\underline{H}_{21}} & \dfrac{-\underline{H}_{11}}{\underline{H}_{21}} \\
+        \dfrac{-\underline{H}_{22}}{\underline{H}_{21}} & \dfrac{-1}{\underline{H}_{21}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \underline{A}_{11} & \underline{A}_{12}\\
+        \underline{A}_{21} & \underline{A}_{22}
+    \end{bmatrix}
+\]
+\endgroup
