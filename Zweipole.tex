@@ -264,18 +264,24 @@ eingehalten werden.
 \subsection{Zweitorersatzschaltung}
 \subsubsection{gesteuerte Quellen}
 \begin{mdframed}[style=exercise,frametitle=Ideal]
+    \footnotesize
+    VCVS: Spannungsgesteurte Spannungsquelle\\
+    CCVS: Stromgesteurte Spannungsquelle\\
+    VCCS: Spannungsgesteurte Stromquelle\\
+    CCCS: Stromgesteurte Stromquelle
+    \normalsize
     \begin{center}
-        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}
+        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}\\
     \begin{tabular}{l c}
-        Spannungsgesteurte Spannungsquelle:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
-        Stromgesteurte Spannungsquelle:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
+       VCVS:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
+       CCVS:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
     \end{tabular}
     \end{center}
     \begin{center}
-        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}
+        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}\\
     \begin{tabular}{l c}
-        Spannungsgesteurte Spannungsquelle:& $\underline{I}=\beta\cdot \underline{I}_1$\\
-        Stromgesteurte Spannungsquelle:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
+       VCCS:& $\underline{I}=\beta\cdot \underline{I}_1$\\
+       CCCS:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
     \end{tabular}
     \end{center}
     Andere Matrizen sind nicht definiert.  Ideale (gesteuerte) Quellen lassen
@@ -284,17 +290,73 @@ eingehalten werden.
 
 \begin{mdframed}[style=exercise,frametitle=Linear]
     \begin{center}
-        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}
+        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert_linear}\\
     \begin{tabular}{l c}
-        Spannungsgesteurte Spannungsquelle:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
-        Stromgesteurte Spannungsquelle:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
+        VCVS& $\underline{U}=\alpha\cdot \underline{U}_1$\\
+        CCVS:& $\underline{U}=Z_T\cdot \underline{I}_1 = \alpha Z_E\cdot \underline{I}_1 $\\
     \end{tabular}
     \end{center}
     \begin{center}
-        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}
+        \includegraphics[width=0.47\columnwidth]{strm-strm-gesteuert_linear}\\
     \begin{tabular}{l c}
-        Spannungsgesteurte Spannungsquelle:& $\underline{I}=\beta\cdot \underline{I}_1$\\
-        Stromgesteurte Spannungsquelle:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
+        CCVS:& $\underline{I}=\beta\cdot \underline{I}_1 = \alpha \frac{\underline{Z}_E}{\underline{Z}_{A}}\cdot \underline{I}_1$\\
+        CCCS:& $\underline{I}=Y_T\cdot \underline{U}_1 = \frac{\alpha}{\underline{Z}_{A}}\cdot \underline{U}_1$\\
     \end{tabular}
     \end{center}
+% /home/ayham/Downloads/1 Vierpole.pdf:29 Matrizen maybe sinnvoll
 \end{mdframed}
+\subsubsection{Ersatzschaltbilder}
+\begin{itemize}
+    \item T-Ersatzschaltbild für Z-Matrix\\
+        für $Z_{12} \neq Z_{21}$ ergänzt um eine gesteuerte Quelle.\\
+        \centering\includegraphics[width=0.7\columnwidth]{esb_t-mit_cs}
+
+        \raggedright
+    \item $\Pi$-Ersatzschaltbild für Y-Matrix\\
+        für $Y_{12} \neq Y_{21}$ ergänzt um eine gesteuerte Quelle.\\
+        \centering\includegraphics[width=0.8\columnwidth]{esb_pi-mit_cs}
+
+        \raggedright
+    \item  Hybrid-Ersatzschaltbild für H-Matrix\\
+        \centering\includegraphics[width=0.7\columnwidth]{esb_hybrid-mit_cs}
+\end{itemize}
+
+\subsection{Beschaltete Zweitore}
+\subsubsection{Eingangsimpedanz}
+\centering\includegraphics[width=0.5\columnwidth]{Eingangsimpedanz}
+\begin{mdframed}[style=exercise]
+    \begin{align*}
+        \boldsymbol{Z}\rightarrow&\  \underline{Z}_{e1} = \underline{Z}_{11}-\frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_V}\\
+        \boldsymbol{Y}\rightarrow&\  \underline{Y}_{e1} = \underline{Y}_{11}-\frac{\underline{Y}_{12}\underline{Y}_{21}}{\underline{Y}_{22}+\underline{Y}_V}\\
+        \boldsymbol{A}\rightarrow&\  \underline{Z}_{e1} = \frac{\underline{A}_{11}\underline{Z}_V + \underline{A}_{12}}{\underline{A}_{21}\underline{Z}_V+\underline{A}_{22}}\\
+        \boldsymbol{H}\rightarrow&\  \underline{Z}_{e1} = \underline{H}_{11}-\frac{\underline{H}_{12}\underline{H}_{21}}{\underline{H}_{22}+\underline{Y}_V}\\
+        \boldsymbol{C}\rightarrow&\  \underline{Y}_{e1} = \underline{C}_{11}-\frac{\underline{C}_{12}\underline{C}_{21}}{\underline{C}_{22}+\underline{Z}_V}\\
+    \end{align*}
+\end{mdframed}
+\raggedright
+
+\subsubsection{Ausgangsimpedanz}
+\centering\includegraphics[width=0.5\columnwidth]{Ausgangsimpedanz}
+\begin{mdframed}[style=exercise]
+    \begin{align*}
+        \boldsymbol{Z}\rightarrow&\  \underline{Z}_{e2} = \underline{Z}_{22}-\frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_i}\\
+        \boldsymbol{Y}\rightarrow&\  \underline{Y}_{e2} = \underline{Y}_{22}-\frac{\underline{Y}_{12}\underline{Y}_{21}}{\underline{Y}_{11}+\underline{Y}_i}\\
+        \boldsymbol{A}\rightarrow&\  \underline{Z}_{e2} = \frac{\underline{A}_{22}\underline{Z}_i + \underline{A}_{12}}{\underline{A}_{21}\underline{Z}_i+\underline{A}_{11}}\\
+        \boldsymbol{H}\rightarrow&\  \underline{Z}_{e2} = \underline{H}_{22}-\frac{\underline{H}_{12}\underline{H}_{21}}{\underline{H}_{11}+\underline{Y}_i}\\
+        \boldsymbol{C}\rightarrow&\  \underline{Y}_{e2} = \underline{C}_{22}-\frac{\underline{C}_{12}\underline{C}_{21}}{\underline{C}_{11}+\underline{Z}_i}\\
+    \end{align*}
+\end{mdframed}
+\raggedright
+
+\subsubsection{Ersatzquelle}
+\centering\includegraphics[width=0.7\columnwidth]{Ersatzquelle}
+\begin{mdframed}[style=exercise]
+    \begin{align*}
+        \boldsymbol{Z}\rightarrow&\  \underline{U}_{qe} = \frac{\underline{U}_q\underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_i}\\
+        \boldsymbol{Y}\rightarrow&\  \underline{I}_{qe} = \frac{-\underline{I}_q\underline{Y}_{21}}{\underline{Y}_{11}+\underline{Y}_i}\\
+        \boldsymbol{A}\rightarrow&\  \underline{U}_{qe} = \frac{\underline{U}_q}{\underline{Z}_i\underline{A}_{21}+\underline{A}_{11}}\\
+        \boldsymbol{H}\rightarrow&\  \underline{I}_{qe} = \frac{-\underline{U}_q\underline{H}_{21}}{\underline{H}_{11}+\underline{Z}_i}\\
+        \boldsymbol{C}\rightarrow&\  \underline{U}_{qe} = \frac{\underline{I}_q\underline{C}_{21}}{\underline{C}_{11}+\underline{Y}_i}\\
+    \end{align*}
+\end{mdframed}
+\raggedright
