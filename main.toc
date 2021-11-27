@@ -23,3 +23,6 @@
 \contentsline {subsubsection}{\numberline {3.6.1}Eingangsimpedanz}{7}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Ausgangsimpedanz}{7}{subsubsection.3.6.2}%
 \contentsline {subsubsection}{\numberline {3.6.3}Ersatzquelle}{7}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Wellenwiderstand}{7}{subsubsection.3.6.4}%
+\contentsline {subsubsection}{\numberline {3.6.5}Scheinleistungsanpassung}{8}{subsubsection.3.6.5}%
+\contentsline {subsubsection}{\numberline {3.6.6}Kettenwiderstand}{8}{subsubsection.3.6.6}%

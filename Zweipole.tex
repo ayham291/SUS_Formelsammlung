@@ -360,3 +360,77 @@ eingehalten werden.
     \end{align*}
 \end{mdframed}
 \raggedright
+
+\subsubsection{Wellenwiderstand}
+Beschaltet man den Ausgang eines Zweitors mit $\underline{Z}_{w2}$, so liegt am
+Eingang die Impedanz $\underline{Z}_{w1}$.
+\[
+    \underline{Z}_{w1} = \frac{\underline{A}_{11}\underline{Z}_{w2} + \underline{A}_{12}}{\underline{A}_{21}\underline{Z}_{w2}+\underline{A}_{22}}
+\]
+
+Beschaltet man den Eingang eines Zweitors mit $\underline{Z}_{w1}$, so liegt am
+Ausgang die Impedanz $\underline{Z}_{w2}$.
+\[
+  \underline{Z}_{w2} = \frac{\underline{A}_{22}\underline{Z}_{w1} + \underline{A}_{12}}{\underline{A}_{21}\underline{Z}_{w1}+\underline{A}_{11}}
+\]
+
+\begin{mdframed}[style=exercise,frametitle=L\"osung des obigen Gleichungssystems]
+    \begin{center}
+        \begin{tabular}{c c c}
+            & $\boldsymbol{\underline{Z}_{w1}}$ & $\boldsymbol{\underline{Z}_{w2}}$
+            \vspace{5pt}\\
+            $\underline{\boldsymbol{Z}}$ & $\sqrt{\dfrac{\underline{Z}_{11}\operatorname{det}\underline{Z}}{\underline{Z}_{22}}}$ & $\sqrt{\dfrac{\underline{Z}_{22}\operatorname{det}\underline{Z}}{\underline{Z}_{11}}}$
+            \vspace{5pt}\\
+            $\underline{\boldsymbol{Y}}$ & $\sqrt{\dfrac{\underline{Y}_{22}}{\underline{Y}_{11}\operatorname{det}\underline{Y}}}$ & $\sqrt{\dfrac{\underline{Y}_{11}}{\underline{Y}_{22}\operatorname{det}\underline{Y}}}$
+            \vspace{5pt}\\
+            $\underline{\boldsymbol{A}}$ & $\sqrt{\dfrac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}$ & $\sqrt{\dfrac{\underline{A}_{22}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{11}}}$
+            \vspace{5pt}\\
+            $\underline{\boldsymbol{H}}$ & $\sqrt{\dfrac{\underline{H}_{11}\operatorname{det}\underline{H}}{\underline{H}_{22}}}$ & $\sqrt{\dfrac{\underline{H}_{11}}{\underline{H}_{22}\operatorname{det}\underline{H}}}$
+            \vspace{5pt}\\
+            $\underline{\boldsymbol{C}}$ & $\sqrt{\dfrac{\underline{C}_{22}}{\underline{C}_{11}\operatorname{det}\underline{C}}}$ & $\sqrt{\dfrac{\underline{C}_{11}\operatorname{det}\underline{C}}{\underline{C}_{11}}}$
+            \vspace{5pt}\\
+        \end{tabular}
+
+        \footnotesize
+        F\"ur symmetrische Zweitore gilt $\underline{Z}_{w1}=\underline{Z}_{w2}$
+        \normalsize
+    \end{center}
+\end{mdframed}
+
+Alternatives:
+\begin{mdframed}[style=exercise,frametitle=Messtechnisch(Leerlauf und Kurzschluss)]
+    \begin{align*}
+        \begin{split}
+            \underline{Z}_{01} &= \frac{\underline{A}_{11}\cdot\infty+\underline{A}_{12}}{\underline{A}_{21}\cdot\infty+\underline{A}_{22}}\\
+            \underline{Z}_{k1} &= \frac{\underline{A}_{11}\cdot0+\underline{A}_{12}}{\underline{A}_{21}\cdot0+\underline{A}_{22}}
+        \end{split}
+    \left\} \
+    \underline{Z}_{w1} = \sqrt{\underline{Z}_{k1}\cdot\underline{Z}_{01}}=A(Z_{w1})
+    \right.
+    \end{align*}
+\end{mdframed}
+
+\subsubsection{Scheinleistungsanpassung}
+\textbf{Wiederholung GE2 Kapitel 2.7.8}
+
+Beschaltet man ein Zweitor mit seinen Wellenwiderständen, so liegt
+Scheinleistungsanpassung vor.
+
+\subsubsection{Kettenwiderstand}
+\centering
+\includegraphics[width=0.6\columnwidth]{Kettenwiderstand}
+
+\raggedright
+Schaltet man eine große Zahl gleicher Zweitore in Kette, so nähert sich der
+Eingangswiderstand einem Grenzwert, dem \textbf{Kettenwiderstand} $\mathbf{\underline{Z}_K}$.
+
+\[
+    \underline{Z}_K = \underline{Z}_{11} - \frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_K}
+\]
+L\"osung der obigen Gleichung:
+\[
+    \underline{Z}_K = \frac{1}{2}(\underline{Z}_{11} - \underline{Z}_{22} \pm \sqrt{(\underline{Z}_{11}-\underline{Z}_{22})^2+4\cdot\operatorname{det}\underline{Z}})
+\]
+\footnotesize
+{\color{red}{Für symmetrische Zweitore entspricht der Kettenwiderstand dem Wellenwiderstand.  }}
+\normalsize
