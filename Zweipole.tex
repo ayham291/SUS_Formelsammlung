@@ -1,6 +1,6 @@
 \section{Zweitore - Vierpoltheorie}
 \subsection{Zweitorgleichungen}
-% \includegraphics[width=\columnwidth]{Zweitorgleichungen}
+% \includegraphics[width=\columnwidth]{Zweipole/Zweitorgleichungen}
 \begin{mdframed}[style=exercise]
     \begin{itemize}
         \item{Admittanzform/ Admittanzmatrix \textbf{Y}:}
@@ -110,7 +110,7 @@
 
 \subsubsection{Parameterumrechnung}
 \input{parameterumrechnung}
-% \includegraphics[width=\columnwidth,height=9cm]{Parameterumrechnung}\\
+% \includegraphics[width=\columnwidth,height=9cm]{Zweipole/Parameterumrechnung}\\
 
 \subsection{Zusammenschalten von Zweitoren}
 
@@ -118,21 +118,21 @@
 \begin{itemize}
     \item Reihenschaltung:
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{Reihenschaltung_Zweitore}
+            \includegraphics[width=0.5\textwidth]{Zweipole/Reihenschaltung_Zweitore}
         \[
             \left[ \underline{Z} \right] = \left[ \underline{Z}_1 \right] + \left[ \underline{Z}_2 \right]
         \]
         \end{center}
     \item Parallelschaltung:
         \begin{center}
-            \includegraphics[width=0.6\textwidth]{Parallelschaltung_Zweitoren}
+            \includegraphics[width=0.6\textwidth]{Zweipole/Parallelschaltung_Zweitoren}
         \[
             \left[ \underline{Y} \right] = \left[ \underline{Y}_1 \right] + \left[ \underline{Y}_2 \right]
         \]
         \end{center}
     \item Kettenschaltung:
         \begin{center}
-            \includegraphics[width=0.7\textwidth]{Kettenschaltung_Zweitoren}
+            \includegraphics[width=0.7\textwidth]{Zweipole/Kettenschaltung_Zweitoren}
         \[
             \left[ \underline{A} \right] = \left[ \underline{A}_1 \right] \cdot \left[ \underline{A}_2 \right]
         \]
@@ -145,14 +145,14 @@
         \right] \cdot \left[ \underline{A}_1 \right]$
     \item Reihen-Parallelschaltung:
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{Reihen-Parallelschaltung_Zweitoren}
+            \includegraphics[width=0.5\textwidth]{Zweipole/Reihen-Parallelschaltung_Zweitoren}
         \[
             \left[ \underline{H} \right] = \left[ \underline{H}_1 \right] \cdot \left[ \underline{H}_2 \right]
         \]
         \end{center}
     \item Parallel-Reihenschaltung:
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{Parallel-Reihenschaltung_Zweitoren}
+            \includegraphics[width=0.5\textwidth]{Zweipole/Parallel-Reihenschaltung_Zweitoren}
         \[
             \left[ \underline{C} \right] = \left[ \underline{C}_1 \right] \cdot \left[ \underline{C}_2 \right]
         \]
@@ -164,8 +164,10 @@
 \begin{samepage}
     \onecolumn
     \subsection{Matrizen elementarer Zweitore}
-    \includegraphics[width=\columnwidth]{converted/Matrizen_elementarer_zweitore}
-    \includegraphics[width=\columnwidth]{converted/Matrizen_elementarer_zweitore_1}
+    \begin{center}
+        \includegraphics[width=\columnwidth]{Zweipole/Matrizen_elementarer_zweitore}\\
+        \includegraphics[width=0.95\textwidth]{Zweipole/Matrizen_elementarer_zweitore_1}
+    \end{center}
 \end{samepage}
 \twocolumn
 
@@ -173,7 +175,7 @@
 \begin{mdframed}[style=exercise]
 Ersatzschaltbild eines idealen Trennverst\"arkers:
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{Trennverstaerker_esb}
+        \includegraphics[width=0.7\textwidth]{Zweipole/Trennverstaerker_esb}
     \end{center}
     \[
         A = \begin{pmatrix}
@@ -271,14 +273,14 @@ eingehalten werden.
     CCCS: Stromgesteurte Stromquelle
     \normalsize
     \begin{center}
-        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert}\\
+        \includegraphics[width=0.5\columnwidth]{Zweipole/spg-spg-gestuert}\\
     \begin{tabular}{l c}
        VCVS:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
        CCVS:& $\underline{U}=Z_T\cdot \underline{I}_1$\\
     \end{tabular}
     \end{center}
     \begin{center}
-        \includegraphics[width=0.45\columnwidth]{strm-strm-gesteuert}\\
+        \includegraphics[width=0.45\columnwidth]{Zweipole/strm-strm-gesteuert}\\
     \begin{tabular}{l c}
        VCCS:& $\underline{I}=\beta\cdot \underline{I}_1$\\
        CCCS:& $\underline{I}=Y_T\cdot \underline{U}_1$\\
@@ -290,14 +292,14 @@ eingehalten werden.
 
 \begin{mdframed}[style=exercise,frametitle=Linear]
     \begin{center}
-        \includegraphics[width=0.5\columnwidth]{spg-spg-gestuert_linear}\\
+        \includegraphics[width=0.5\columnwidth]{Zweipole/spg-spg-gestuert_linear}\\
     \begin{tabular}{l c}
         VCVS& $\underline{U}=\alpha\cdot \underline{U}_1$\\
         CCVS:& $\underline{U}=Z_T\cdot \underline{I}_1 = \alpha Z_E\cdot \underline{I}_1 $\\
     \end{tabular}
     \end{center}
     \begin{center}
-        \includegraphics[width=0.47\columnwidth]{strm-strm-gesteuert_linear}\\
+        \includegraphics[width=0.47\columnwidth]{Zweipole/strm-strm-gesteuert_linear}\\
     \begin{tabular}{l c}
         CCVS:& $\underline{I}=\beta\cdot \underline{I}_1 = \alpha \frac{\underline{Z}_E}{\underline{Z}_{A}}\cdot \underline{I}_1$\\
         CCCS:& $\underline{I}=Y_T\cdot \underline{U}_1 = \frac{\alpha}{\underline{Z}_{A}}\cdot \underline{U}_1$\\
@@ -309,21 +311,21 @@ eingehalten werden.
 \begin{itemize}
     \item T-Ersatzschaltbild für Z-Matrix\\
         für $Z_{12} \neq Z_{21}$ ergänzt um eine gesteuerte Quelle.\\
-        \centering\includegraphics[width=0.7\columnwidth]{esb_t-mit_cs}
+        \centering\includegraphics[width=0.7\columnwidth]{Zweipole/esb_t-mit_cs}
 
         \raggedright
     \item $\Pi$-Ersatzschaltbild für Y-Matrix\\
         für $Y_{12} \neq Y_{21}$ ergänzt um eine gesteuerte Quelle.\\
-        \centering\includegraphics[width=0.8\columnwidth]{esb_pi-mit_cs}
+        \centering\includegraphics[width=0.8\columnwidth]{Zweipole/esb_pi-mit_cs}
 
         \raggedright
     \item  Hybrid-Ersatzschaltbild für H-Matrix\\
-        \centering\includegraphics[width=0.7\columnwidth]{esb_hybrid-mit_cs}
+        \centering\includegraphics[width=0.7\columnwidth]{Zweipole/esb_hybrid-mit_cs}
 \end{itemize}
 
 \subsection{Beschaltete Zweitore}
 \subsubsection{Eingangsimpedanz}
-\centering\includegraphics[width=0.5\columnwidth]{Eingangsimpedanz}
+\centering\includegraphics[width=0.5\columnwidth]{Zweipole/Eingangsimpedanz}
 \begin{mdframed}[style=exercise]
     \begin{align*}
         \boldsymbol{Z}\rightarrow&\  \underline{Z}_{e1} = \underline{Z}_{11}-\frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_V}\\
@@ -336,7 +338,7 @@ eingehalten werden.
 \raggedright
 
 \subsubsection{Ausgangsimpedanz}
-\centering\includegraphics[width=0.5\columnwidth]{Ausgangsimpedanz}
+\centering\includegraphics[width=0.5\columnwidth]{Zweipole/Ausgangsimpedanz}
 \begin{mdframed}[style=exercise]
     \begin{align*}
         \boldsymbol{Z}\rightarrow&\  \underline{Z}_{e2} = \underline{Z}_{22}-\frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_i}\\
@@ -349,7 +351,7 @@ eingehalten werden.
 \raggedright
 
 \subsubsection{Ersatzquelle}
-\centering\includegraphics[width=0.7\columnwidth]{Ersatzquelle}
+\centering\includegraphics[width=0.7\columnwidth]{Zweipole/Ersatzquelle}
 \begin{mdframed}[style=exercise]
     \begin{align*}
         \boldsymbol{Z}\rightarrow&\  \underline{U}_{qe} = \frac{\underline{U}_q\underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_i}\\
@@ -418,7 +420,7 @@ Scheinleistungsanpassung vor.
 
 \subsubsection{Kettenwiderstand}
 \centering
-\includegraphics[width=0.6\columnwidth]{Kettenwiderstand}
+\includegraphics[width=0.6\columnwidth]{Zweipole/Kettenwiderstand}
 
 \raggedright
 Schaltet man eine große Zahl gleicher Zweitore in Kette, so nähert sich der
