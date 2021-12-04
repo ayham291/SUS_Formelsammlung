@@ -1,5 +1,5 @@
 \section{Signaldarstellung im Frequenz- und Bildbereich}
-\subsection{Harmonische Synthese}
+\subsection{Fourierreihe periodischer Signale}
 Die Überlagerung von Sinusschwingungen zu einem periodischen,
 nichtsinusförmigen Signal nennt man harmonische Synthese.
 \subsubsection{Reelle Fourierreihe}
@@ -15,7 +15,7 @@ nichtsinusförmigen Signal nennt man harmonische Synthese.
                     &= A_0+\sum_{k=1}^\infty [A_k\cdot sin(k\omega_1 t + \varphi_k-\frac{\pi}{2})]
             \end{align*}
 
-            \texttt{Koeffizienten }
+            \texttt{\footnotesize Koeffizienten }
             \[
                 A_0 = \frac{1}{T}\int_{t_0}^{T+t_0} f(t)dt
             \]
@@ -37,12 +37,31 @@ nichtsinusförmigen Signal nennt man harmonische Synthese.
     \end{align*}
 \end{mdframed}
 
+\subsubsection{Komplex Reell umwandeln}
+\begin{mdframed}[style=exercise]
+    \begin{gather*}
+    \texttt{\footnotesize Komplex $\rightarrow$ Reell:}\\
+                a_0 = A_0 = \underline{c}_0\\
+                \left.
+                \begin{split}
+                    a_k = 2\ \mathfrak{Re}\left\{ c_k \right\}= \left[ \underline{c}_k+\underline{c}_{-k} \right]\\
+                    b_k = -2\ \mathfrak{Im}\left\{ \underline{c}_k \right\}= j\left[ \underline{c}_k-\underline{c}_{-k} \right]\\
+                    A_k = 2|\underline{c}_k| \quad \beta_k = -\varphi_k
+                \end{split}\right\} \quad k>0\\
+    \texttt{\footnotesize Reell $\rightarrow$ Komplex:}\\
+                \left.
+                \begin{split}
+                    \underline{c}_k = \frac{1}{2}\left( a_k-jb_k \right) = \frac{A_k}{2} e^{-j\beta_k}\\
+                    \underline{c}_{-k} = \frac{1}{2}\left( a_k+jb_k \right) = \frac{A_k}{2} e^{j\beta_k}
+                \end{split}\right\} \quad k>0\\
+    \end{gather*}
+\end{mdframed}
+
 \subsubsection{Symmetrieeigenschaften}
 \begin{itemize}
     \item Gerade Funktionen
         symmetrisch zur y-Achse\\
         alle $sin$-teile verschwinden
-
         - $A_0 = \frac{2}{T}\int^{\frac{T}{2}}_{0} y(t)dt$\\
         - $a_{k} = \frac{4}{T}\int^{\frac{T}{2}}_{0}y(t)\cdot cos(k\omega_1t)dt$\\
         - $b_k = 0$\\
@@ -62,7 +81,7 @@ Halbwellensymmetrie gilt wenn:
 Die Fourier-Reihe einer Zeitfunktion mit HWS enthält stets
 nur Terme mit ungeraden Ordnungszahlen. $k=1,3,5,\dots,\infty$
 \begin{mdframed}[style=exercise,frametitle=im Allgemeinen]
-    \texttt{Koeffizienten}:\\
+    \texttt{\footnotesize Koeffizienten}:\\
     \[
         A_0 = 0,\
         a_{2k} = 0,\
@@ -87,4 +106,45 @@ nur Terme mit ungeraden Ordnungszahlen. $k=1,3,5,\dots,\infty$
     \]
     $$b_{2k-1} = \frac{8}{T}\int^{\frac{T}{4}}_{0}y(t)\cdot sin((2k-1)\omega_1t)dt$$
 \end{mdframed}
-\subsection{Verschiebungssatz}
+
+\subsubsection{Verschiebungssatz}
+Verschiebung im Zeitbereich entspricht eine Drehung den Komplexen Spektrum um
+die Phase $\rightarrow\ -k\omega_1 t_v$
+\begin{align*}
+    f_v(t) = f(t-t_v) &= \sum_{k=-\infty}^{\infty} \underline{c}_k\cdot e^{j\omega_1 k (t-t_v)} \\
+           &= \sum_{k=-\infty}^{\infty} \underbrace{\underline{c}_k\cdot e^{j\omega_1 k t_v}}_{\underline{c}_{k_v}} \cdot e^{\omega_1 k t}
+\end{align*}
+
+Ist tv < 0, wie im Beispiel oben, so werden die Phasenwinkel des Spektrums mit
+zunehmender Frequenz größer.
+
+\subsubsection{Fourierreihe und LTI-Systeme}
+
+\[
+    y(t) = \sum_{k=-\infty}^{\infty} \underbrace{\underline{H}(k\omega_1)\cdot\underline{c}_{xk}}_{\underline{c}_{yk}} \cdot e^{j\omega_1 k t}
+\]
+
+\subsection{Kenngrößen periodischer Signale}
+\begin{itemize}
+    \item Effektivwert
+        \[
+            U_{\mathit{eff}} = \sqrt{\frac{1}{T} \int_\tau^{\tau+T} u(t)^2 dt}
+        \]
+        mit der Fourierreihe:
+
+        $$ U_{\mathit{eff}} = \sqrt{\sum_{k=-\infty}^{\infty} c_k^2} = \sqrt{\sum_{k=-\infty}^{\infty}U_{k,\mathit{eff}}^2} $$
+        auch:
+        $$ \sqrt{A_0^2 + \frac{1}{2} \sum_{k=1}^{\infty} A_k^2} $$
+    \item Klirrfaktor(Oberschwingungsgehalt):\\
+        Dient zur Quantifizierung einer nichtlinearen Verzerrung bzw. von der
+        Sinusform eines Signals.
+        \begin{align*}
+            k &= \frac{\text{Effektivwert der Oberschwingungen}}{\text{Effektivwert des Wechselanteil}} \\
+                &= \frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1
+        \end{align*}
+        Für Wechselgrößen lässt sich $k$ einfach mit \textbf{Grundschwingungsgehalt} $g$ ermitteln (\textit{gilt immer}):
+        \[
+            k = \sqrt{1-g^2} \leftrightarrow g = \frac{U_1}{U}
+        \]
+
+\end{itemize}
