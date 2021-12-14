@@ -1,4 +1,6 @@
+tags
 *.aux
+*.toc
 *.log
 *.out
 *.fdb*
