@@ -183,3 +183,81 @@ Ausgangssignal durch Faltung bestimmen:
   Die Übertragungsfunktion hängt von der komplexen\linebreak Frequenz
   \hl{$s=\sigma+j\omega$} ab.
 \end{mdframed}
+
+\subsubsection{Pegel}
+    \begin{mdframed}[style=exercise]
+        Energiegröße: $\quad a = 10\cdot \lg\dfrac{P_1}{P_2}dB $\\
+        Feldgröße: $\qquad a = 20\cdot \lg\dfrac{U_1}{U_2}dB $
+    \end{mdframed}
+
+\subsection{Pole und Nullstellen}
+\[
+    H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
+\]
+Die Koeffizienten an und bm ergeben sich aus den Bauelementen und sind reell.
+\begin{mdframed}[style=exercise]
+    \begin{align*}
+        \underline{H}(s) &= \frac{\textsc{Summe aller Nullstellen}}{\textsc{Summe aller Pole}}\\
+        &=\frac{b_{M}}{a_{N}} \cdot \frac{\left(s-s_{o 1}\right) \cdot\left(s-s_{o
+        2}\right) \cdot \ldots \cdot\left(s-s_{o M}\right)}{\left(s-s_{x 1}\right)
+        \cdot\left(s-s_{x 2}\right) \cdot \ldots \cdot\left(s-s_{x N}\right)}
+    \end{align*}
+    $k=\dfrac{b_M}{a_N}$ ist der Maßstabfaktor
+\end{mdframed}
+\textbf{Bei stabilen Systemen müssen alle Pole in der linken komplexen Halbebene liegen.}
+
+\newpage
+\subsection{Elementare Übertragungsglieder}
+\footnotesize
+    P-Glied , D-Glied , I-Glied , PT1-Glied
+\normalsize
+Für mehr sehe externe Tabelle.
+
+\subsection{Zusammenschalten von Übertragungsgliedern}
+\begin{mdframed}[style=exercise]
+\begin{itemize}
+    \item Kettenschaltung\\
+        \textbf{Multiplikation} der Einzelübertragungsfunktionen.
+        \[
+            \boxed{\underline{H}_{e}(s)=\underline{H}_{B}(s) \cdot \underline{H}_{A}(s)=\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}
+        \]
+        \begin{center}
+            \includegraphics[width=0.7\columnwidth]{Kettenschaltung_Uebertragungsglieder}
+            \[
+                \underline{Y}_{B}=\underline{H}_{B}(s) \cdot \underline{X}_{B}=\underline{H}_{B}(s) \cdot \underline{Y}_{A}=\underline{H}_{B}(s) \cdot \underline{H}_{A}(s) \cdot \underline{X}_{A}
+            \]
+        \end{center}
+        Rückwirkungsfreiheit gewährleistet sein.
+    \item Parallelschaltung\\
+        \textbf{Summe} der Einzelübertragungsfunktionen.
+        \[
+            \boxed{\underline{H}_{e}(s)=\underline{H}_{B}(s) + \underline{H}_{A}(s)}
+        \]
+        \begin{center}
+            \includegraphics[width=0.6\columnwidth]{Parallel_Uebertragungsglieder}
+            \begin{align*}
+                \underline{Y}&=\underline{Y}_{A} \pm \underline{Y}_{B}\\
+                             &=\underline{H}_{A}(s) \cdot \underline{X}_{A} \pm \underline{H}_{B}(s) \cdot \underline{X}_{B}\\
+                             &=\left(\underline{H}_{A}(s)+\underline{H}_{B}(s)\right) \cdot \underline{X}
+            \end{align*}
+        \end{center}
+    \item Rückkopplung
+        \[
+            \boxed{\underline{H}_{e}(s)=\frac{\underline{H}_{A}(s)}{1\pm\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}}
+        \]
+        \begin{center}
+            \includegraphics[width=0.6\columnwidth]{Rueckkopplung_Uebertragungsglieder}\\
+            Mitkopplung: $y_A$ vergrößert $x_A$\\
+            Gegenkopplung $y_A$ verkleinert $x_A$
+        \end{center}
+
+\end{itemize}
+\end{mdframed}
+
+\subsection{Bode Diagramm}
+\begin{itemize}
+    \item Bode Diagramm von Kettenschaltung\\
+        Ergibt sich durch \textbf{Addition der Bodediagramme} der einzelnen Glieder.
+    \item Bode Diagramm der inversen Übertragungsfunktion\\
+        Ergibt sich durch \textbf{Spiegelung an der X-Achse}.
+\end{itemize}
