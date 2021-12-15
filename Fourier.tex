@@ -128,23 +128,129 @@ zunehmender Frequenz größer.
 \begin{itemize}
     \item Effektivwert
         \[
-            U_{\mathit{eff}} = \sqrt{\frac{1}{T} \int_\tau^{\tau+T} u(t)^2 dt}
+            \boxed{U_{\mathit{eff}} = \sqrt{\frac{1}{T} \int_\tau^{\tau+T} u(t)^2 dt}}
         \]
+    \begin{mdframed}[style=exercise]
         mit der Fourierreihe:
-
         $$ U_{\mathit{eff}} = \sqrt{\sum_{k=-\infty}^{\infty} c_k^2} = \sqrt{\sum_{k=-\infty}^{\infty}U_{k,\mathit{eff}}^2} $$
         auch:
         $$ \sqrt{A_0^2 + \frac{1}{2} \sum_{k=1}^{\infty} A_k^2} $$
+    \end{mdframed}
     \item Klirrfaktor(Oberschwingungsgehalt):\\
         Dient zur Quantifizierung einer nichtlinearen Verzerrung bzw. von der
         Sinusform eines Signals.
         \begin{align*}
             k &= \frac{\text{Effektivwert der Oberschwingungen}}{\text{Effektivwert des Wechselanteil}} \\
-                &= \frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1
+            &= \boxed{\frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1}
         \end{align*}
         Für Wechselgrößen lässt sich $k$ einfach mit \textbf{Grundschwingungsgehalt} $g$ ermitteln (\textit{gilt immer}):
         \[
-            k = \sqrt{1-g^2} \leftrightarrow g = \frac{U_1}{U}
+            \boxed{k = \sqrt{1-g^2} \leftrightarrow g = \frac{U_1}{U}}
         \]
+    \item Mischgrößen\\
+        - Schwingungsgehalt:
+        \[
+            s = \frac{U_\sim}{U} = \frac{\textsc{Effektivwert des Wechselanteils}}{\textsc{Effektivwert der Mischgröße}}
+        \]
+        - Welligkeit:
+        \[
+            w = \frac{U_\sim}{\bar{U}} = \frac{\textsc{Effektivwert des Wechselanteils}}{\textsc{Gleichanteil}}
+        \]
+        - Riffelfaktor:
+        \[
+            R = \frac{\hat{U}_\sim}{\bar{U}} = \frac{\textsc{Scheitelwert des Wechselanteils}}{\textsc{Gleichanteil}}
+        \]
+    \item Wirkleistung:
+        \[
+            P = \bar{p}(t) = \frac{1}{T} \int_0^T u(t)\cdot i(t) dt
+        \]
+        \[
+            P = \sum_{k=-\infty}^{\infty}\underline{u}_k \underline{i}_k^* \leftrightarrow i_k^* = i_{-k}
+        \]
+        \begin{mdframed}[style=exercise]
+            Als Reihe:
+            \[
+                P_0 + \sum_{k=1}^{\infty} U_{k_{eff}}\cdot
+                I_{k_{eff}}\cdot\cos(\varphi_{uk}-\varphi_{ik}) = \sum_{k=0}^{\infty}P_k
+            \]
+        \end{mdframed}
+        Nur gleichfrequente harmonische tragen zur Wirkleistung bei!
+    \item Schein- und Blindleistung\\
+        \[
+            \boxed{S = U_{eff}\cdot I_{eff} = U\cdot I = \sqrt{P^2+Q^2}}
+        \]
+        \begin{mdframed}[style=exercise]
+        Bei einem nicht linearen Verbraucher an einer Sinusförmigen Spannung:
+        \vspace{-1em}
+            \begin{multline*}
+                S^{2}=(U I)^{2}=U_{1}^{2} \cdot \sum_{k=0}^{\infty} I_{k}^{2}=\\U_{1}^{2} I_{0}^{2}+U_{1}^{2} \sum_{k=2}^{\infty} I_{k}^{2}+U_{1}^{2} I_{1}^{2} \sin ^{2} \varphi_{1}+U_{1}^{2} I_{1}^{2} \cos ^{2} \varphi_{1}
+            \end{multline*}
+        \end{mdframed}
 
+        \begin{mdframed}[style=exercise,frametitle=Verschiebungs- Feldblindleistung $Q_v$]
+            \vspace{-1em}
+            \begin{gather*}
+                Q = \sqrt{Q^2_v + D^2}\\
+                S = \sqrt{P^2+Q^2_v + D^2}
+            \end{gather*}
+            Blindleistung aufgrund der Phasenverschiebung zwischen Strom und
+            Spannung gleicher Frequenz.
+        \end{mdframed}
+
+        \begin{center}
+            \vspace{-1em}
+            \includegraphics[width=0.4\columnwidth]{Schein-Blindleistung_raeumlich.png}
+            \vspace{-1em}
+        \end{center}
+
+        \begin{mdframed}[style=exercise,frametitle=Verzerrungblindleistun $D$]
+            \[
+                D^2 = U_1^2\cdot(I^2-I_1^2) = S^2(1-g)
+            \]
+            von Mischtermen (Produkten von Spannung und Strom unterschiedlicher
+            Frequenzen).
+        \end{mdframed}
 \end{itemize}
+
+\subsection{Fouriertransformation}
+\begin{mdframed}[style=exercise]
+    \[
+        x(t) \laplace X(\omega)
+    \]
+    Hintransformation - Analysegleichung:
+    \[
+        \underline{X}(\omega)=\mathcal{F}\left\{ x(t) \right\} = \int_{-\infty}^{\infty} x(t) \cdot e^{-j\omega t} dt
+    \]
+    Komplexwertige Fouriertransformierte:
+    \[
+        \underline{X}(\omega) = |\underline{X}(\omega)|\cdot e^{j\omega\varphi}
+    \]
+    \footnotesize
+    $$\textsc{Einheit:} \left[ x(t) \right]\cdot s$$
+
+    \normalsize
+
+    Rücktransformation - Synthesegleichung:
+    \[
+        x(t) = \mathcal{F}^{-1}\left\{ \underline{X}(\omega) \right\} = \frac{1}{2\pi}\int_{-\infty}^{\infty} \underline{X}(\omega) \cdot e^{j\omega t} d\omega
+    \]
+\end{mdframed}
+
+\subsubsection{Umwandeln zwischen Fouriertransformation und Fourierreihen}
+$\text{Grenzübergang\ }
+    T\rightarrow\infty$
+\[
+    \omega_1=\frac{2\pi}{T}\rightarrow0\ \rightarrow
+    \text{kontinuierliches Spektrum}
+\]
+
+\[
+    \boxed{ \text{FR}\rightarrow\text{FT: }\quad \underline{c}_k =
+    \frac{1}{T}\underline{X}(\omega_1)}
+\]
+
+\[
+    \boxed{ \text{FR}\rightarrow\text{FT: }\quad \underline{X}(\omega) =
+    2\pi\sum_{k=-\infty}^{\infty} \underline{c}_k\cdot
+    \delta(\omega-k\omega_1)}
+\]
