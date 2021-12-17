@@ -141,7 +141,7 @@ zunehmender Frequenz größer.
         Sinusform eines Signals.
         \begin{align*}
             k &= \frac{\text{Effektivwert der Oberschwingungen}}{\text{Effektivwert des Wechselanteil}} \\
-            &= \boxed{\frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1}
+            &= \boxed{\frac{\sqrt{\sum_{{\color{red}{k=2}}}^{\infty} U_{k}^{2}}}{\sqrt{\sum_{\color{red}{k=1}}^{\infty} U_{k}^{2}}} = \frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1}
         \end{align*}
         Für Wechselgrößen lässt sich $k$ einfach mit \textbf{Grundschwingungsgehalt} $g$ ermitteln (\textit{gilt immer}):
         \[
@@ -187,6 +187,13 @@ zunehmender Frequenz größer.
             \end{multline*}
         \end{mdframed}
 
+        Räumlich Darstellung der Scheinleistung:
+        \begin{center}
+            \vspace{-1em}
+            \includegraphics[width=0.35\columnwidth]{Schein-Blindleistung_raeumlich.png}
+            \vspace{-0.7em}
+        \end{center}
+
         \begin{mdframed}[style=exercise,frametitle=Verschiebungs- Feldblindleistung $Q_v$]
             \vspace{-1em}
             \begin{gather*}
@@ -196,13 +203,6 @@ zunehmender Frequenz größer.
             Blindleistung aufgrund der Phasenverschiebung zwischen Strom und
             Spannung gleicher Frequenz.
         \end{mdframed}
-
-        \begin{center}
-            \vspace{-1em}
-            \includegraphics[width=0.4\columnwidth]{Schein-Blindleistung_raeumlich.png}
-            \vspace{-1em}
-        \end{center}
-
         \begin{mdframed}[style=exercise,frametitle=Verzerrungblindleistun $D$]
             \[
                 D^2 = U_1^2\cdot(I^2-I_1^2) = S^2(1-g)
@@ -254,3 +254,113 @@ $\text{Grenzübergang\ }
     2\pi\sum_{k=-\infty}^{\infty} \underline{c}_k\cdot
     \delta(\omega-k\omega_1)}
 \]
+
+\subsection{Eigenschaften der Fouriertransformation}
+\begin{mdframed}[style=exercise,frametitle=Symmetrie,nobreak=false]
+            \begin{wrapfigure}[10]{R}{0.27\textwidth}
+                \vspace{-1.4em}
+                \includegraphics[width=0.3\textwidth]{FT_Symmetrie.png}
+            \end{wrapfigure}
+
+           \begin{minipage}{5cm}
+                Betrag und der Realteil des Spektrums sind gerade\\
+            \end{minipage}
+
+            \begin{minipage}{5cm}
+                Phase und der Imaginärteil des Spektrums sind ungerade.
+            \end{minipage}
+
+            \[
+                \underline{X}(-\omega) = \underline{X}^*(\omega)
+            \]
+            % \begin{itemize}
+            %     \footnotesize
+            %     \item Betrag und der Realteil des Spektrums sind gerade
+
+            %     \item Phase und der Imaginärteil des Spektrums sind ungerade.
+            % \end{itemize}
+
+            \begin{gather*}
+                x(t)\text{ reel und gerade}\rightarrow X(\omega)\text{ reel und gerade}\\
+                \underline{X}(\omega) = 2\int_0^\infty x(t)\cos(\omega t)dt\\
+                x(t)\text{ reel und ungerade}\rightarrow X(\omega)\text{ imaginär und ungerade}\\
+                \underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)dt
+            \end{gather*}
+\end{mdframed}
+\begin{mdframed}[style=exercise,nobreak=false]
+\begin{itemize}
+    \item \textbf{Linearität}
+    \[
+        a_{1} x_{1}(t)+a_{2} x_{2}(t)\ \laplace\  a_{1} \underline{X}_{1}(\omega)+a_{2} \underline{X}_{2}(\omega)
+    \]
+    % Eine lineare Überlagerung von gewichteten Zeitsignalen führt zur linearen
+    % Überlagerung der Spektren mit denselben Vorfaktoren.
+
+    \item \textbf{Dualität}
+    \[
+        \underline{X}(t)\ \laplace\  2\pi\cdot x(-\omega)
+    \]
+    % Zeit- und Frequenzbereich können vertauscht werden (bis auf den Faktor $2\pi$
+    % und einer Vorzeichenumkehr).
+\item \textbf{Zeitskalierung}
+    \[
+        x(a \cdot t)\ \laplace\ \frac{1}{|a|} \underline{X}\left(\frac{\omega}{a}\right) \quad a \in \mathbb{R} \backslash\{0\}
+    \]
+    % Eine Stauchung der Zeitachse führt zur Dehnung der Frequenzachse.
+    % Frequenzachse (und Skalierung der Amplitude).
+\item \textbf{Frequenzskalierung}
+    \[
+        \underline{X}(b\cdot\omega)\ \laplace\ \frac{1}{|b|} x\left(\frac{t}{b}\right) \quad b \in \mathbb{R} \backslash\{0\}
+    \]
+    % Eine Stauchung der Frequenzachse führt zur Dehnung der Zeitachse.
+    % Zeitachse (und Skalierung der Amplitude).
+\item \textbf{Zeitverschiebung}
+    \[
+        x\left(t-t_{0}\right)\ \laplace\ \underline{X}(\omega) \cdot e^{-j \omega t_{0}}
+    \]
+    % Eine Verschiebung im Zeitbereich ändert nicht den Betrag des Spektrums,
+    % aber die Phase um einen sich mit der Frequenz $\omega$ linear ändernden Phasenterm.
+\item \textbf{Frequenzverschiebung - Modulation}
+    \[
+        x(t) \cdot e^{j \omega_{0} t}\ \laplace\ \underline{X}\left(\omega-\omega_{0}\right)
+    \]
+    % Eine Verschiebung im Frequenzbereich führt zu einem Modulationsterm im
+    % Zeitbereich oder andersherum, um eine Frequenzverschiebung zu erreichen,
+    % muss im Zeitbereich mit $e^{(j\omega_0t)}$ multipliziert (moduliert) werden.
+\item \textbf{Faltungssatz}
+    \[
+        x_{1}(t) * x_{2}(t)\ \laplace\ \underline{X}_{1}(\omega) \cdot \underline{X}_{2}(\omega)
+    \]
+    % Faltung im Zeitbereich entspricht Multiplikation im Frequenzbereich
+\item \textbf{Multiplikation - Fenstertheorem}
+    \[
+        x_{1}(t) \cdot x_{2}(t)\ \laplace\ \frac{1}{2 \pi} \underline{X}_{1}(\omega) * \underline{X}_{2}(\omega)
+    \]
+    % Multiplikation im Zeitbereich entspricht Faltung im Frequenzbereich (und
+    % Normierung mit $2\pi$).
+\item \textbf{Differentiation\\}
+    im Zeitbereich:
+    \[
+        \frac{d}{dt} x(t) \ \laplace\ j\omega\underline{X}(\omega)
+    \]
+    im Frequenzbereich:
+    \[
+        t \cdot x(t)\ \laplace\ j \frac{d}{d \omega} \underline{X}(\omega)
+    \]
+    % Differenzieren im Zeitbereich dreht die Phase des Spektrums um $\frac{\pi}{2}$ und
+    % verstärkt die Amplitude des Spektrums zu hohen Frequenzen hin mit linear
+    % anwachsendem $\omega$.
+\item \textbf{Integration}
+    \[
+        \int_{-\infty}^{t} x(\tau) d \tau\ \laplace\ \frac{1}{j \omega} \underline{X}(\omega)+\pi \cdot \underline{X}(0) \cdot \delta(\omega)
+    \]
+    % Integrieren dreht die Phase um $-\frac{\pi}{2}$, dämpft die Amplitude des
+    % Spektrums mit $\frac{1}{\omega}$ und erzeugt einen (dem Gleichanteil von
+    % $x(t)$ entsprechenden) Dirac bei $\omega = 0$.
+\item \textbf{Energieberechnung - Parseval}
+    \[
+        \int_{-\infty}^{+\infty}|x(t)|^{2} d t=\frac{1}{2 \pi} \int_{-\infty}^{+\infty}|\underline{X}(\omega)|^{2} d \omega
+    \]
+    % Die Signalenergie lässt sich aus der Zeit- und Frequenzbereichsdarstellung berechnen.
+\end{itemize}
+\end{mdframed}
