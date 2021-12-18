@@ -290,77 +290,76 @@ $\text{Grenzübergang\ }
 \begin{mdframed}[style=exercise,nobreak=false]
 \begin{itemize}
     \item \textbf{Linearität}
-    \[
-        a_{1} x_{1}(t)+a_{2} x_{2}(t)\ \laplace\  a_{1} \underline{X}_{1}(\omega)+a_{2} \underline{X}_{2}(\omega)
-    \]
-    % Eine lineare Überlagerung von gewichteten Zeitsignalen führt zur linearen
-    % Überlagerung der Spektren mit denselben Vorfaktoren.
-
+        \[
+            a_{1} x_{1}(t)+a_{2} x_{2}(t)\ \laplace\  a_{1} \underline{X}_{1}(\omega)+a_{2} \underline{X}_{2}(\omega)
+        \]
+        % {\footnotesize Eine lineare Überlagerung von gewichteten Zeitsignalen führt zur linearen
+        % Überlagerung der Spektren mit denselben Vorfaktoren.}
     \item \textbf{Dualität}
-    \[
-        \underline{X}(t)\ \laplace\  2\pi\cdot x(-\omega)
-    \]
-    % Zeit- und Frequenzbereich können vertauscht werden (bis auf den Faktor $2\pi$
-    % und einer Vorzeichenumkehr).
-\item \textbf{Zeitskalierung}
-    \[
-        x(a \cdot t)\ \laplace\ \frac{1}{|a|} \underline{X}\left(\frac{\omega}{a}\right) \quad a \in \mathbb{R} \backslash\{0\}
-    \]
-    % Eine Stauchung der Zeitachse führt zur Dehnung der Frequenzachse.
-    % Frequenzachse (und Skalierung der Amplitude).
-\item \textbf{Frequenzskalierung}
-    \[
-        \underline{X}(b\cdot\omega)\ \laplace\ \frac{1}{|b|} x\left(\frac{t}{b}\right) \quad b \in \mathbb{R} \backslash\{0\}
-    \]
-    % Eine Stauchung der Frequenzachse führt zur Dehnung der Zeitachse.
-    % Zeitachse (und Skalierung der Amplitude).
-\item \textbf{Zeitverschiebung}
-    \[
-        x\left(t-t_{0}\right)\ \laplace\ \underline{X}(\omega) \cdot e^{-j \omega t_{0}}
-    \]
-    % Eine Verschiebung im Zeitbereich ändert nicht den Betrag des Spektrums,
-    % aber die Phase um einen sich mit der Frequenz $\omega$ linear ändernden Phasenterm.
-\item \textbf{Frequenzverschiebung - Modulation}
-    \[
-        x(t) \cdot e^{j \omega_{0} t}\ \laplace\ \underline{X}\left(\omega-\omega_{0}\right)
-    \]
-    % Eine Verschiebung im Frequenzbereich führt zu einem Modulationsterm im
-    % Zeitbereich oder andersherum, um eine Frequenzverschiebung zu erreichen,
-    % muss im Zeitbereich mit $e^{(j\omega_0t)}$ multipliziert (moduliert) werden.
-\item \textbf{Faltungssatz}
-    \[
-        x_{1}(t) * x_{2}(t)\ \laplace\ \underline{X}_{1}(\omega) \cdot \underline{X}_{2}(\omega)
-    \]
-    % Faltung im Zeitbereich entspricht Multiplikation im Frequenzbereich
-\item \textbf{Multiplikation - Fenstertheorem}
-    \[
-        x_{1}(t) \cdot x_{2}(t)\ \laplace\ \frac{1}{2 \pi} \underline{X}_{1}(\omega) * \underline{X}_{2}(\omega)
-    \]
-    % Multiplikation im Zeitbereich entspricht Faltung im Frequenzbereich (und
-    % Normierung mit $2\pi$).
-\item \textbf{Differentiation\\}
-    im Zeitbereich:
-    \[
-        \frac{d}{dt} x(t) \ \laplace\ j\omega\underline{X}(\omega)
-    \]
-    im Frequenzbereich:
-    \[
-        t \cdot x(t)\ \laplace\ j \frac{d}{d \omega} \underline{X}(\omega)
-    \]
-    % Differenzieren im Zeitbereich dreht die Phase des Spektrums um $\frac{\pi}{2}$ und
-    % verstärkt die Amplitude des Spektrums zu hohen Frequenzen hin mit linear
-    % anwachsendem $\omega$.
-\item \textbf{Integration}
-    \[
-        \int_{-\infty}^{t} x(\tau) d \tau\ \laplace\ \frac{1}{j \omega} \underline{X}(\omega)+\pi \cdot \underline{X}(0) \cdot \delta(\omega)
-    \]
-    % Integrieren dreht die Phase um $-\frac{\pi}{2}$, dämpft die Amplitude des
-    % Spektrums mit $\frac{1}{\omega}$ und erzeugt einen (dem Gleichanteil von
-    % $x(t)$ entsprechenden) Dirac bei $\omega = 0$.
-\item \textbf{Energieberechnung - Parseval}
-    \[
-        \int_{-\infty}^{+\infty}|x(t)|^{2} d t=\frac{1}{2 \pi} \int_{-\infty}^{+\infty}|\underline{X}(\omega)|^{2} d \omega
-    \]
-    % Die Signalenergie lässt sich aus der Zeit- und Frequenzbereichsdarstellung berechnen.
+        \[
+            \underline{X}(t)\ \laplace\  2\pi\cdot x(-\omega)
+        \]
+        % {\footnotesize Zeit- und Frequenzbereich können vertauscht werden (bis auf den Faktor $2\pi$
+        % und einer Vorzeichenumkehr).}
+    \item \textbf{Zeitskalierung}
+        \[
+            x(a \cdot t)\ \laplace\ \frac{1}{|a|} \underline{X}\left(\frac{\omega}{a}\right) \quad a \in \mathbb{R} \backslash\{0\}
+        \]
+        % {\footnotesize Eine Stauchung der Zeitachse führt zur Dehnung der Frequenzachse.
+        % Frequenzachse (und Skalierung der Amplitude).}
+    \item \textbf{Frequenzskalierung}
+        \[
+            \frac{1}{|b|} x\left(\frac{t}{b}\right)\ \laplace\ \underline{X}(b\cdot\omega) \quad b \in \mathbb{R} \backslash\{0\}
+        \]
+        % {\footnotesize Eine Stauchung der Frequenzachse führt zur Dehnung der Zeitachse.
+        % Zeitachse (und Skalierung der Amplitude).}
+    \item \textbf{Zeitverschiebung}
+        \[
+            x\left(t-t_{0}\right)\ \laplace\ \underline{X}(\omega) \cdot e^{-j \omega t_{0}}
+        \]
+        % {\footnotesize Eine Verschiebung im Zeitbereich ändert nicht den Betrag des Spektrums,
+        % aber die Phase um einen sich mit der Frequenz $\omega$ linear ändernden Phasenterm.}
+    \item \textbf{Frequenzverschiebung - Modulation}
+        \[
+            x(t) \cdot e^{j \omega_{0} t}\ \laplace\ \underline{X}\left(\omega-\omega_{0}\right)
+        \]
+        % {\footnotesize Eine Verschiebung im Frequenzbereich führt zu einem Modulationsterm im
+        % Zeitbereich oder andersherum, um eine Frequenzverschiebung zu erreichen,
+        % muss im Zeitbereich mit $e^{(j\omega_0t)}$ multipliziert (moduliert) werden.}
+    \item \textbf{Faltungssatz}
+        \[
+            x_{1}(t) * x_{2}(t)\ \laplace\ \underline{X}_{1}(\omega) \cdot \underline{X}_{2}(\omega)
+        \]
+        % {\footnotesize Faltung im Zeitbereich entspricht Multiplikation im Frequenzbereich}
+    \item \textbf{Multiplikation - Fenstertheorem}
+        \[
+            x_{1}(t) \cdot x_{2}(t)\ \laplace\ \frac{1}{2 \pi} \underline{X}_{1}(\omega) * \underline{X}_{2}(\omega)
+        \]
+        % {\footnotesize Multiplikation im Zeitbereich entspricht Faltung im Frequenzbereich (und
+        % Normierung mit $2\pi$).}
+    \item \textbf{Differentiation\\}
+        {\small im Zeitbereich:}
+        \[
+            \frac{d}{dt} x(t) \ \laplace\ j\omega\underline{X}(\omega)
+        \]
+        {\small im Frequenzbereich:}
+        \[
+            t \cdot x(t)\ \laplace\ j \frac{d}{d \omega} \underline{X}(\omega)
+        \]
+        % {\footnotesize Differenzieren im Zeitbereich dreht die Phase des Spektrums um $\frac{\pi}{2}$ und
+        % verstärkt die Amplitude des Spektrums zu hohen Frequenzen hin mit linear
+        % anwachsendem $\omega$.}
+    \item \textbf{Integration}
+        \[
+            \int_{-\infty}^{t} x(\tau) d \tau\ \laplace\ \frac{1}{j \omega} \underline{X}(\omega)+\pi \cdot \underline{X}(0) \cdot \delta(\omega)
+        \]
+        % {\footnotesize Integrieren dreht die Phase um $-\frac{\pi}{2}$, dämpft die Amplitude des
+        % Spektrums mit $\frac{1}{\omega}$ und erzeugt einen (dem Gleichanteil von
+        % $x(t)$ entsprechenden) Dirac bei $\omega = 0$.}
+    \item \textbf{Energieberechnung - Parseval}
+        \[
+            \int_{-\infty}^{+\infty}|x(t)|^{2} d t=\frac{1}{2 \pi} \int_{-\infty}^{+\infty}|\underline{X}(\omega)|^{2} d \omega
+        \]
+        % {\footnotesize Die Signalenergie lässt sich aus der Zeit- und Frequenzbereichsdarstellung berechnen.}
 \end{itemize}
 \end{mdframed}
