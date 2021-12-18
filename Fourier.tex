@@ -257,6 +257,8 @@ Die Koeffizienten $\underline{c}_k $ der komplexen Fourierreihe sind die
 Abtastwerte von $\underline{X}(\omega)$ bei den Frequenzen
 \[\omega=k\omega_1=k\frac{2\pi}{T}\]
 \end{mdframed}
+
+\subsection{Eigenschaften der Fouriertransformation}
 \begin{mdframed}[style=exercise,nobreak=false]
 \begin{itemize}
     \item \textbf{Linearität}
@@ -332,4 +334,29 @@ Abtastwerte von $\underline{X}(\omega)$ bei den Frequenzen
         \]
         % {\footnotesize Die Signalenergie lässt sich aus der Zeit- und Frequenzbereichsdarstellung berechnen.}
 \end{itemize}
+\end{mdframed}
+\begin{mdframed}[style=exercise,frametitle=Symmetrie,nobreak=true]
+            \begin{wrapfigure}[10]{R}{0.27\textwidth}
+                \vspace{-1.4em}
+                \includegraphics[width=0.3\textwidth]{FT_Symmetrie.png}
+            \end{wrapfigure}
+
+           \begin{minipage}{5cm}
+                Betrag und der Realteil des Spektrums sind gerade\\
+            \end{minipage}
+
+            \begin{minipage}{5cm}
+                Phase und der Imaginärteil des Spektrums sind ungerade.
+            \end{minipage}
+
+            \[
+                \underline{X}(-\omega) = \underline{X}^*(\omega)
+            \]
+
+            \begin{gather*}
+                x(t)\text{ reel und gerade}\rightarrow X(\omega)\text{ reel und gerade}\\
+                \underline{X}(\omega) = 2\int_0^\infty x(t)\cos(\omega t)dt\\
+                x(t)\text{ reel und ungerade}\rightarrow X(\omega)\text{ imaginär und ungerade}\\
+                \underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)dt
+            \end{gather*}
 \end{mdframed}
