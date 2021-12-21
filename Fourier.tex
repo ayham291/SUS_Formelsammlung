@@ -141,7 +141,7 @@ zunehmender Frequenz größer.
         Sinusform eines Signals.
         \begin{align*}
             k &= \frac{\text{Effektivwert der Oberschwingungen}}{\text{Effektivwert des Wechselanteil}} \\
-            &= \boxed{\frac{\sqrt{\sum_{{\color{red}{k=2}}}^{\infty} U_{k}^{2}}}{\sqrt{\sum_{\color{red}{k=1}}^{\infty} U_{k}^{2}}} = \frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1}
+            &= \boxed{\frac{\sqrt{\sum_{{\color{red}{k=2}}}^{\infty} U_{k}^{2}}}{\sqrt{\sum_{{\color{red}{k=1}}}^{\infty} U_{k}^{2}}} = \frac{\sqrt{U_\sim^2 - U_1^2}}{U_\sim} \leq 1}
         \end{align*}
         Für Wechselgrößen lässt sich $k$ einfach mit \textbf{Grundschwingungsgehalt} $g$ ermitteln (\textit{gilt immer}):
         \[
@@ -170,15 +170,17 @@ zunehmender Frequenz größer.
         \begin{mdframed}[style=exercise]
             Als Reihe:
             \[
-                P_0 + \sum_{k=1}^{\infty} U_{k_{eff}}\cdot
-                I_{k_{eff}}\cdot\cos(\varphi_{uk}-\varphi_{ik}) = \sum_{k=0}^{\infty}P_k
+                P_0 + \sum_{k=1}^{\infty} U_{k_{\mathit{eff}}}\cdot
+                I_{k_{\mathit{eff}}}\cdot\cos(\varphi_{uk}-\varphi_{ik}) = \sum_{k=0}^{\infty}P_k
             \]
         \end{mdframed}
         Nur gleichfrequente harmonische tragen zur Wirkleistung bei!
     \item Schein- und Blindleistung\\
+        \vspace{-0.5em}
         \[
-            \boxed{S = U_{eff}\cdot I_{eff} = U\cdot I = \sqrt{P^2+Q^2}}
+            \boxed{S = U_{\mathit{eff}}\cdot I_{\mathit{eff}} = U\cdot I = \sqrt{P^2+Q^2}}
         \]
+        \vspace{-0.5em}
         \begin{mdframed}[style=exercise]
         Bei einem nicht linearen Verbraucher an einer Sinusförmigen Spannung:
         \vspace{-1em}
@@ -189,20 +191,21 @@ zunehmender Frequenz größer.
 
         Räumlich Darstellung der Scheinleistung:
         \begin{center}
-            \vspace{-1em}
+            \vspace{-0.5em}
             \includegraphics[width=0.35\columnwidth]{Schein-Blindleistung_raeumlich.png}
-            \vspace{-0.7em}
+            \vspace{-0.6em}
         \end{center}
 
         \begin{mdframed}[style=exercise,frametitle=Verschiebungs- Feldblindleistung $Q_v$]
             \vspace{-1em}
             \begin{gather*}
-                Q = \sqrt{Q^2_v + D^2}\\
+                Q = \sqrt{Q^2_v + D^2} \leftrightarrow Q = \sqrt{S^2-P^2}\\
                 S = \sqrt{P^2+Q^2_v + D^2}
             \end{gather*}
             Blindleistung aufgrund der Phasenverschiebung zwischen Strom und
             Spannung gleicher Frequenz.
         \end{mdframed}
+
         \begin{mdframed}[style=exercise,frametitle=Verzerrungblindleistun $D$]
             \[
                 D^2 = U_1^2\cdot(I^2-I_1^2) = S^2(1-g)
