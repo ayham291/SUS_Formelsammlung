@@ -6,9 +6,10 @@
 \pagenumbering{gobble}
 \maketitle\newpage
 
-\tableofcontents
+\tableofcontents\clearpage
 
-\twocolumn\cleardoublepage
+\raggedcolumns
+\begin{multicols*}{2}
 \pagestyle{fancy}
 \lhead{Signale und Systeme\\ Formelsammlung}
 \rhead{WS 21/22 \\Ayham Alhalaibi}
@@ -20,5 +21,7 @@
 \input{Zweitore}
 \input{Fourier}
 \input{Laplace}
+\input{Schaltvorgaenge}
 
+\end{multicols*}
 \end{document}

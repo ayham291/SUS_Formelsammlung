@@ -205,7 +205,7 @@ zunehmender Frequenz größer.
 		      Blindleistung aufgrund der Phasenverschiebung zwischen Strom und
 		      Spannung gleicher Frequenz.
 	      \end{mdframed}
-
+            \clearpage
 	      \begin{mdframed}[style=exercise,frametitle=Verzerrungblindleistun $D$]
 		      \[
 			      D^2 = U_1^2\cdot(I^2-I_1^2) = S^2(1-g)
@@ -262,7 +262,7 @@ zunehmender Frequenz größer.
 \end{mdframed}
 
 \subsection{Eigenschaften der Fouriertransformation}
-\begin{mdframed}[style=exercise,nobreak=false]
+\begin{mdframed}[style=exercise,nobreak]
 	\begin{itemize}
 		\item \textbf{Linearität}
 		      \[
@@ -282,6 +282,10 @@ zunehmender Frequenz größer.
 		      \]
 		      % {\footnotesize Eine Stauchung der Zeitachse führt zur Dehnung der Frequenzachse.
 		      % Frequenzachse (und Skalierung der Amplitude).}
+    \end{itemize}
+\end{mdframed}
+\begin{mdframed}[style=exercise]
+    \begin{itemize}
 		\item \textbf{Frequenzskalierung}
 		      \[
 			      \frac{1}{|b|} x\left(\frac{t}{b}\right)\ \laplace\ \underline{X}(b\cdot\omega) \quad b \in \mathbb{R} \backslash\{0\}
@@ -363,4 +367,4 @@ zunehmender Frequenz größer.
 		\underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)dt
 	\end{gather*}
 \end{mdframed}
-\newpage
+\clearpage
