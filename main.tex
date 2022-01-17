@@ -1,10 +1,45 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{preamble}
 
+\def\FS{Formelsammlung}
+\def\Fach{Signale und Systeme}
+\title{\FS \ \Fach}
+\author{Ayham Alhalaibi}
+\date{\today}
+\def\MatNr{SECRET} % DONT PUSH TO PUBLIC REMOTE REPO
+\def\Semester{Wintersemster 21/22}
+
 \begin{document}
 
 \pagenumbering{gobble}
-\maketitle\newpage
+\begin{titlepage}
+\thispagestyle{empty}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{~/texmf/tex/latex/oth/logos/OTHR_OTHR_Logo.pdf}\\
+\vspace*{\stretch{1}}
+\Huge
+\textsc{\MyTitle}\\
+\vspace*{\stretch{0.25}}
+\normalsize
+\Semester
+
+\vspace*{\stretch{2}}
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l}
+    Name:  & \hspace{4cm}\MyAuthor \\
+    Matrikelnummer:  & \hspace{4cm}\MatNr\\
+    Letzte Änderung:  & \hspace{4cm}\MyDate\\
+    Lizenz:  & \hspace{4cm}GPLv3
+\end{tabular}
+}
+\vspace*{\stretch{1}}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
 
 \tableofcontents\clearpage
 
@@ -12,8 +47,8 @@
 \raggedcolumns
 \begin{multicols*}{2}
 \pagestyle{fancy}
-\lhead{Signale und Systeme\\ Formelsammlung}
-\rhead{WS 21/22 \\Ayham Alhalaibi}
+\lhead{\FS\\\Fach}
+\rhead{\MyAuthor\\\Semester}
 \cfoot{\vspace{-20pt}\thepage}
 \pagenumbering{arabic}
 
