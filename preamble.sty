@@ -11,7 +11,8 @@
 \usepackage{lmodern}
 \usepackage{physics}
 % \usepackage[left=1cm,right=1cm,top=2cm,bottom=1.7cm]{geometry}
-\usepackage[showframe,left=1.5cm,right=0.5cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage[left=0pt,right=0.5cm,top=1.55cm,bottom=1.5cm]{geometry}
+% \usepackage{showframe}
 \usepackage{tabularx}
 \usepackage{siunitx}
 \usepackage{fancyhdr}
@@ -45,7 +46,12 @@
     linkcolor=black,
     urlcolor=black
 }
-\setlength{\headheight}{23.10004pt}
+
+\setlength{\headsep}{10pt}
+\setlength{\headheight}{24pt}
+\setlength{\marginparwidth}{0pt}
+\geometry{bindingoffset=2cm}
+
 \newcommand{\bulletpt}{
 \begin{tikzpicture}
     \filldraw[fill=black] circle (2pt);
