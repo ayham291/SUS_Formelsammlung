@@ -162,9 +162,85 @@
 			      \end{minipage}
 		      }
 		      \begin{align*}
-			      S &= \Sigma+j\Omega                                               \\
-			       \texttt{Amplitudenänderung }\Sigma &= \sigma T = \sigma/f_A     \\
-			       \texttt{normierte Kreisfrequenz }\Omega &= \omega T =  2\pi f_A
+			      S                                       & = \Sigma+j\Omega        \\
+			      \texttt{Amplitudenänderung }\Sigma      & = \sigma T = \sigma/f_A \\
+			      \texttt{normierte Kreisfrequenz }\Omega & = \omega T =  2\pi f_A
 		      \end{align*}
 	\end{itemize}
 \end{mdframed}
+\subsection{Abtasttheorem im Fequenzbereich}
+Nur wenn das Eingangssignal auf $\omega_g$ bandbegrenzt und die Abtastfrequenz $\omega_a  \geq
+	2\omega_g$ ist, kommt es nicht zu spektralen Überlappungen (= Aliasing).
+
+Aliasing führt zu zusätzlichen Abtastwerten nicht mehr rekonstruieren lässt.
+
+\centering
+\includegraphics[width=0.5\columnwidth]{Bilder/Abtasttheorem_Uebrlappung}
+
+\raggedright
+\subsection{Elementare Zeitdiskrete Systeme}
+\subsubsection{Definition}
+Ein System, das sowohl linear, als auch zeitinvariant ist, nennen wir ein
+lineares zeitinvariantes System, oder kurz LTI-System
+
+\subsubsection{Kausalität und Stabilität}
+\begin{itemize}
+	\item \textbf{Kausal}:
+	      wenn die Anzahl der Pole (= Grad des Nennerpolynoms) größer gleich
+	      der Anzahl der Nullstellen (= Grad des Zählerpolynoms) ist.
+	\item \textbf{Stabil}:
+	      wenn der Einheitskreis zum Konvergenzbereich gehört
+\end{itemize}
+
+\begin{center}
+	\fbox{\parbox{.9\columnwidth}{Liegen alle Pole innerhalb des Einheitskreises,
+			so ist das LTI-System kausal und stabil!}}
+\end{center}
+
+\subsubsection{Klassifizierung von Systemen}
+% Die mathematischen Beschreibung fehlen. wurden nie gebraucht während lernen. Kap6S63 6.5.7
+\begin{mdframed}[style=exercise]
+	\begin{itemize}
+		\item \textbf{Transversale Systeme:}\\
+		      Der Ausgang wird nicht auf den Eingang zurückgeführt\\
+		      $\Rightarrow$ $a_k=0 \texttt{ für } k>0$\\
+		      $\Rightarrow$ alle Pole liegen im Ursprung
+
+		      \makebox[\columnwidth][c]{
+			      \begin{minipage}{0.4\textwidth}
+				      \includegraphics[width=0.7\textwidth]{Bilder/Transversale_Systeme_}
+			      \end{minipage}
+			      \hspace{-1em}
+			      \begin{minipage}{0.6\textwidth}
+				      \includegraphics[width=0.8\textwidth]{Bilder/Transversale_Systeme_SG}
+			      \end{minipage}
+		      }
+		\item \textbf{Rekursive Systeme:}\\
+		      Der aktuelle Ausgangswert hängt nur vom aktuellen Eingangswert
+		      und früheren Ausgangswerten ab.\\
+		      $\Rightarrow$ $b_k=0 \texttt{ für } k>0$\\
+		      $\Rightarrow$ alle Nullstellen liegen im Ursprung
+
+		      \makebox[\columnwidth][c]{
+			      \begin{minipage}{0.4\textwidth}
+				      \includegraphics[width=0.7\textwidth]{Bilder/Rekursive_Systeme}
+			      \end{minipage}
+			      \hspace{-1em}
+			      \begin{minipage}{0.6\textwidth}
+				      \includegraphics[width=0.8\textwidth]{Bilder/Rekursive_Systeme_SG}
+			      \end{minipage}
+		      }
+	\end{itemize}
+\end{mdframed}
+
+Systeme nach der Länge der Impulsantwort
+\begin{itemize}
+	\item \textbf{Finite Impulse Response (FIR) Systeme:}\\
+	      \bulletpt haben \underline{endlich} lange Impulsantworten\\
+	      \bulletpt synonym zum Begriff transversales System\\
+	      \bulletpt endlich lange Impulsantworten lassen sich auch mit
+	      transversal-rekursiven Systemen erreichen
+	\item \textbf{Infinite Impulse Response (IIR) Systeme:}\\
+	      \bulletpt haben \underline{unendlich} lange Impulsantworten\\
+	      \bulletpt synonym zum Begriff rekursives System
+\end{itemize}
