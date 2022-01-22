@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=1]
+    \draw[->] (0,-2.5) -- (0,2.5) node[right]{$\mathfrak{Im}\{z\}$}; %y
+    \draw[->] (-3,0) -- (3,0) node[above]{$\mathfrak{Re}\{z\}$}; %x
+
+    \draw[thick, color=black, dashed](0,0) circle (2);
+    \draw[ultra thick, ->, purple] (2,0) arc (0:180:2);
+    \draw[ultra thick, ->, red] (2,0) arc (0:-180:2);
+    \draw[ultra thick, ->, blue] (2,0) -- (0,0) node[below left]{$s =-\infty$};
+
+    \draw[thick, dashed, purple] (1,0) arc (0:180:1);
+
+    \draw[thick, black] (0.2,2) -- (-0.2,2) node[above left]{$j$};
+    \draw[thick, black] (-0.2,-2) -- (0.2,-2) node[below right]{$-j$};
+    \draw[thick, black] (2,0.2) -- (2,-0.2) node[below right]{$1$};
+    \draw[thick, black] (-2,0.2) -- (-2,-0.2) node[below left]{$-1$};
+
+    \filldraw[blue] (1,0) circle (2pt) node[below]{$ e^{\sigma_0}$};
+    \filldraw[orange] (0.3,0.953) circle (2pt) node[below]{$s_0 = s$};
+    \draw[orange] (0,0) -- (0.6,1.907) {};
+    \filldraw[purple] (0.6,1.907) circle (2pt) node[above right]{$s=e^{j \omega_0}$};
+\end{tikzpicture}

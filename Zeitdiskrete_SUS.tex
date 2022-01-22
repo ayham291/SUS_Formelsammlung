@@ -178,6 +178,7 @@ Aliasing führt zu zusätzlichen Abtastwerten nicht mehr rekonstruieren lässt.
 \includegraphics[width=0.5\columnwidth]{Bilder/Abtasttheorem_Uebrlappung}
 
 \raggedright
+\vspace{-1.5em}
 \subsection{Elementare Zeitdiskrete Systeme}
 \subsubsection{Definition}
 Ein System, das sowohl linear, als auch zeitinvariant ist, nennen wir ein
@@ -186,16 +187,78 @@ lineares zeitinvariantes System, oder kurz LTI-System
 \subsubsection{Kausalität und Stabilität}
 \begin{itemize}
 	\item \textbf{Kausal}:
-	      wenn die Anzahl der Pole (= Grad des Nennerpolynoms) größer gleich
-	      der Anzahl der Nullstellen (= Grad des Zählerpolynoms) ist.
+	      wenn die Anzahl der Pole (Grad des Nenners) größer gleich
+	      der Anzahl der Nullstellen (Grad des Zählers) ist.
+	      $ h(n) = 0 \texttt{ für } n<0 $
 	\item \textbf{Stabil}:
 	      wenn der Einheitskreis zum Konvergenzbereich gehört
+	      $ \sum_{n=-\infty}^{\infty}|h(n))| < \infty $
 \end{itemize}
 
 \begin{center}
 	\fbox{\parbox{.9\columnwidth}{Liegen alle Pole innerhalb des Einheitskreises,
 			so ist das LTI-System kausal und stabil!}}
 \end{center}
+
+\subsubsection{Faltung}
+
+\vspace{1ex}
+Beispiel Impulsantworttabelle:
+\vspace{-1em}
+\begin{center}
+	\begin{table}[H]
+		\footnotesize
+		\centering
+		\begin{tabular}{|c|cccc|c|ccc|}
+			\hline
+			  & $d_0$ & $d_1$ & $d_2$ & $d_3$ & $\frac{1}{c_0}$               & $c_1$    & $c_2$ & $c_3$ \\
+			\hline
+			k & 0     & 1     & 0     & -1    & $h[k]$                        & 0        & -0,25 & 0     \\
+			\hline
+			0 & 1     &       &       &       &                               &          &       &       \\
+			\hline
+			1 &       & 1     &       &       & 1                             &          &       &       \\
+			\hline
+			2 &       &       & 1     &       &                               & 1        &       &       \\
+			\hline
+			3 &       &       &       & 1     & $1 \cdot 1 + (-0,25) \cdot 1$ &          & 1     &       \\
+			\hline
+			4 &       &       &       &       &                               & $-1,25 $ &       & 1     \\
+			\hline
+			5 &       &       &       &       & $-1,25/4$                     &          & -1,25 &       \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\includegraphics[width=0.4\columnwidth]{Bilder/Signalflussdiagramm}
+\end{center}
+
+Alternativ mit der Differenzengleichung:
+\[
+	\left.\underline{H}(z)=\frac{8 \cdot z^{2}-2 \cdot z-2}{z^{2}+0,25} = \frac{8 -2 \cdot z^1-2 \cdot z^{-2}}{1 + 0,25 \cdot z^{-2}}\right\} \frac{b}{a}=\frac{Y}{X}
+\]
+Differenzengleichung $\rightarrow y(n) = 8x(n) -2x(n-1)-2x(n-2)-0,25y(n-2)$
+\begin{align*}
+	\begin{split}
+		a_{0} y(n)+a_{1} y(n-1)+\ldots+a_{N} y(n-N)=\\
+		b_{0} x(n)+b_{1} x(n-1)+\ldots+b_{M} x(n-M)
+	\end{split}
+\end{align*}
+
+\subsubsection{Signalflussplan / Signalflussgraph}
+
+\includegraphics[width=\columnwidth]{Bilder/Signalfluss_plan-graph}
+
+\begin{itemize}
+	\item Ein Knoten, in den ein Zweig hinein und zwei oder mehr Zweige
+	      hinausgehen, ist eine Verzweigung.
+	\item Ein Knoten, in den mehrere Zweige hinein und ein Zweig hinausgeht,
+	      ist ein Addierer.
+	\item Ein Pfeil, über den ein Koeffizient geschrieben ist, beschreibt
+	      eine Multiplikation des Signals mit dem Koeffizienten.
+	\item Ein Zweig, über den $z^{-1}$ geschrieben ist, beschreibt eine
+	      Verzögerung um einen Abtasttakt.
+\end{itemize}
 
 \subsubsection{Klassifizierung von Systemen}
 % Die mathematischen Beschreibung fehlen. wurden nie gebraucht während lernen. Kap6S63 6.5.7
@@ -236,11 +299,120 @@ lineares zeitinvariantes System, oder kurz LTI-System
 Systeme nach der Länge der Impulsantwort
 \begin{itemize}
 	\item \textbf{Finite Impulse Response (FIR) Systeme:}\\
-	      \bulletpt haben \underline{endlich} lange Impulsantworten\\
-	      \bulletpt synonym zum Begriff transversales System\\
-	      \bulletpt endlich lange Impulsantworten lassen sich auch mit
+	      \bulletptR haben \underline{endlich} lange Impulsantworten\\
+	      \bulletptR synonym zum Begriff transversales System\\
+	      \bulletptR endlich lange Impulsantworten lassen sich auch mit
 	      transversal-rekursiven Systemen erreichen
 	\item \textbf{Infinite Impulse Response (IIR) Systeme:}\\
-	      \bulletpt haben \underline{unendlich} lange Impulsantworten\\
-	      \bulletpt synonym zum Begriff rekursives System
+	      \bulletptR haben \underline{unendlich} lange Impulsantworten\\
+	      \bulletptR synonym zum Begriff rekursives System
 \end{itemize}
+
+\end{multicols*}
+
+\subsection{s-Frequenzebene/z-Frequenzebene}
+\begin{center}
+	\begin{tabular}[htpb]{c|c|c}
+		s-Frequenzebene     & $e^{sT} = z$          & z-Frequenzebene     \\
+		\hline
+		\input{s_ebene.tex} & $\Longleftrightarrow$ & \input{z_ebene.tex} \\
+	\end{tabular}
+\end{center}
+
+\begin{multicols*}{2}
+\subsubsection{Zeitdiskrete Fouriertransformation}
+\begin{mdframed}[style=exercise,]
+	zeitdiskrete Fouriertransformation (DTFT):
+	\[
+		\underline{X}(\Omega) = \sum_{k=-\infty}^{\infty} x(k)e^{-j\Omega k}
+	\]
+	zeitdiskrete Fourier-Inverse-Transformation (IDTFT):
+	\[
+		\underline{x}(k) = \frac{1}{2\pi}\int_{\pi}^{\pi} X(\Omega)e^{j\Omega} d\Omega
+	\]
+
+	\footnotesize
+	beide sind gleich: $x(n)=x(k)$
+\end{mdframed}
+\subsubsection{Z-Transformation}
+\begin{mdframed}[style=exercise]
+	Die LT von $x_a(t)$ ist gleich der z-Transformation von $x(k)$:
+	$e^{sT}=z$
+	\[
+		\underline{X}(s) = \sum_{k=-\infty}^{\infty} x(kT)e^{-skT} \Rightarrow \underline{X}(z) = \sum_{k=-\infty}^{\infty} x(k)z^{-k}
+	\]
+\end{mdframed}
+für die Rücktransformation wird Partialbruchzerlegung verwendet.
+\[
+	\underline{X}(z)=\frac{\underline{Z}(z)}{\underline{N}(z)}=\frac{\sum_{m=0}^{M} b_{m} z^{m}}{\sum_{n=0}^{N} a_{n} z^{n}}=\frac{b_{M}}{a_{N}} \cdot \frac{\prod_{m=1}^{M}\left(z-z_{o m}\right)}{\prod_{n=1}^{N}\left(z-z_{x n}\right)}
+\]
+bei einfachen Polstellen gilt:
+\begin{align*}
+	\Aboxed{\frac{\underline{X}(z)}{z} & =\frac{c_{0}}{z}+\frac{c_{1}}{z-z_{x 1}}+\frac{c_{2}}{z-z_{x 2}}+\cdots+\frac{c_{N}}{z-z_{x N}}} \\
+	                                   & =\frac{c_{0}}{z}+\sum_{n=1}^{N} \frac{c_{n}}{z-z_{x n}}
+\end{align*}
+bei mehrfachen Polstellen gilt:
+\begin{align*}
+	\Aboxed{\frac{\underline{X}(z)}{z}=\frac{c_{0}}{z}+\frac{c_{1}}{z-z_{x n}}+\frac{c_{2}}{\left(z-z_{x n}\right)^{2}}+\cdots+\frac{c_{k}}{\left(z-z_{x n}\right)^{k}}}
+\end{align*}
+
+\subsubsection{Übertragungsfunktion $\Leftrightarrow$ Differenzengleichung}
+\[
+	\underline{H}(z)=\frac{\underline{Y}(z)}{\underline{X}(z)}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{-k}}{1+\sum_{k=1}^{N} a_{k} \cdot z^{-k}}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{N-k}}{z^{N}+\sum_{k=1}^{N} a_{k} \cdot z^{N-k}}
+\]
+
+\subsubsection{PN-Diagramm $\Rightarrow$ Frequenzebene}
+\begin{mdframed}[style=exercise]
+	$z=e^{j\Omega}$ bedeutet: um $\underline{H}(\Omega)$ zu ermittlen, muss man
+	den Einheitskreis entlang gehen.
+	\[
+		\underline{H}(\Omega)=\left.\underline{H}(z)\right|_{z=e^{j \Omega}}
+	\]
+\end{mdframed}
+Beispiel:
+\[
+	\underline{H}(z)=\frac{\left(z-z_{o}\right)}{\left(z-z_{x}\right)}
+\]
+\[
+	\underline{H}(\Omega)=\frac{\left(e^{j \Omega}-z_{o}\right)}{\left(e^{j \Omega}-z_{x}\right)}=\frac{A_{o} e^{j \varphi_{o}}}{A_{x} e^{j \varphi_{x}}}
+\]
+
+\centering
+\includegraphics[width=0.7\columnwidth]{Bilder/PN-FreqGang}
+
+\raggedright
+\textbf{Betragsfrequenzgang}
+\[
+	H(\Omega)=\frac{A_{o}(\Omega)}{A_{x}(\Omega)}
+\]
+\textbf{Phasenfrequenzgang}
+\[
+	\varphi_{H}(\Omega)=\varphi_{o}(\Omega)-\varphi_{x}(\Omega)
+\]
+
+Aus dem  Punkt (1,0) starten und am Einheitskreis entlang gegen den
+Uhrzeigersinn gehen.
+\makebox[\columnwidth][c]{
+	\begin{minipage}{0.5\columnwidth}
+		\begin{center}
+			\includegraphics[width=0.9\columnwidth]{Bilder/PN-FreqGang_BSP-P1}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.5\columnwidth}
+		\begin{center}
+			\includegraphics[width=0.8\columnwidth]{Bilder/PN-FreqGang_BSP-P2}
+		\end{center}
+	\end{minipage}
+}
+\makebox[\columnwidth][c]{
+	\begin{minipage}{0.5\columnwidth}
+		\begin{center}
+			\includegraphics[width=0.9\columnwidth]{Bilder/PN-FreqGang_BSP1-P1}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.5\columnwidth}
+		\begin{center}
+			\includegraphics[width=0.8\columnwidth]{Bilder/PN-FreqGang_BSP2-P2}
+		\end{center}
+	\end{minipage}
+}

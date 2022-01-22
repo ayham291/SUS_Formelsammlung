@@ -1,0 +1,16 @@
+\begin{tikzpicture}[baseline=1]
+    \draw[->] (0,-2.5) -- (0,2.5) node[right]{$j\omega$}; %y
+    \draw[->] (-4,0) -- (2,0) node[above]{$\sigma$}; %x
+
+    \draw[thick, dashed, red] (2,2) -- (-4,2) node[above right]{periodische Fortsetzung};
+    \draw[thick, dashed, red] (2,-2) -- (-4,-2) node[below right]{periodische Fortsetzung};
+    \draw[ultra thick, ->, blue] (0,0) -- (-4,0) node[above right]{$(-\infty)$};
+    \draw[ultra thick, ->, purple] (0,0) -- (0,2) node[below right]{$j \omega$};
+    \draw[ultra thick, ->, red] (0,0) -- (0,-2) node[above right]{$-j \omega$};
+
+    \filldraw[orange] (-2,1.5) circle (2pt) node[left]{$S_0$};
+    \draw[thick, dashed, purple] (-2,1.5) -- (0,1.5) node[below right]{$j \omega_0 $};
+    \draw[thick, dashed, blue] (-2,1.5) -- (-2,0) node[below right]{$ \sigma_0 $};
+
+    \filldraw[purple] (-2,-1.5) circle (2pt) node[left]{$S_0^*$};
+\end{tikzpicture}
