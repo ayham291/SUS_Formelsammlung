@@ -43,14 +43,14 @@
 
 \tableofcontents\clearpage
 
+\pagestyle{fancy}
+\lhead{\MyAuthor}
+\rhead{\Semester}
+\cfoot{\vspace{-20pt}\thepage}
+\pagenumbering{arabic}
 % \setlength{\columnsep}{1pt}
 \raggedcolumns
 \begin{multicols*}{2}
-\pagestyle{fancy}
-\lhead{\FS\\\Fach}
-\rhead{\MyAuthor\\\Semester}
-\cfoot{\vspace{-20pt}\thepage}
-\pagenumbering{arabic}
 
 \input{Signale_im_Zeitbereich}
 \input{Systeme}
@@ -60,6 +60,14 @@
 \input{Schaltvorgaenge}
 \input{Zeitdiskrete_SUS}
 
+
+% \newpage
+% \section{Wichtige Formeln aus der Vorlesung}
+% \textbf{Integral über die Gaußische kurve}:
+%     \[
+%         \int_{-\infty}^{\infty} e^{\frac{-1}{2\sigma^2}t^2}dt \overset{2.3}{=}
+%         \sqrt{2\cdot\pi\sigma^2}
+%     \]
 
 \end{multicols*}
 \end{document}
