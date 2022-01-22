@@ -13,7 +13,7 @@
           \end{mdframed}
       \item{\textbf{Gerade \hfill $\longleftrightarrow$ \hfill Ungerade:}}\\
           \begin{mdframed}[style=exercise,frametitle=Zerlegung des Signals:]
-              - gerader Anteil: \[x_G=\frac{1}{2}\left[x(t)+x(t-1)\right]\]
+              - gerader Anteil: \[x_G=\frac{1}{2}\left[x(t)+x(-t)\right]\]
               - ungerader Anteil: \[x_U=\frac{1}{2}\left[ x(t)-x(-t) \right]\]
           \end{mdframed}
           \begin{center}
@@ -94,14 +94,14 @@
                  1 & \text{f\"ur } \vert t\rvert \leq 1
              \end{cases}
           \]
-          \item{Rechteckfunktion $rect$}
-          \[ rect(t) =
+          \item{Rechteckfunktion $\operatorname{rect}$}
+          \[ \operatorname{rect}(t) =
              \begin{cases}
                  1 & \text{f\"ur } \vert t\rvert \leq \frac{1}{2}\\
                  0 & \text{f\"ur } \vert t\rvert > \frac{1}{2}
              \end{cases}
           \]
-          Darstellbar durch:\\ $rect(t) = \varepsilon\cdot\left( t+\frac{1}{2} \right)-\varepsilon\cdot\left( t-\frac{1}{2} \right)$
+          Darstellbar durch:\\ $\operatorname{rect}(t) = \varepsilon\cdot\left( t+\frac{1}{2} \right)-\varepsilon\cdot\left( t-\frac{1}{2} \right)$
           \item{Komplexe Exponentialfunktion}
           \[ \Lambda(t) =
              \begin{cases}
