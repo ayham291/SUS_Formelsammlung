@@ -25,6 +25,7 @@
 \graphicspath{{./Bilder}}
 \usepackage{float}
 \usepackage{xcolor, soul}
+\definecolor{purple}{RGB}{200,0,255}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{csquotes}
 \usepackage{trfsigns}
@@ -56,6 +57,11 @@
 \newcommand{\bulletpt}{
 \begin{tikzpicture}
     \filldraw[fill=black] circle (2pt);
+\end{tikzpicture}
+}
+\newcommand{\bulletptR}{
+\begin{tikzpicture}
+    \filldraw[fill=black] (0,0) rectangle (3pt,3pt);
 \end{tikzpicture}
 }
 
